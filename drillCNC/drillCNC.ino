@@ -12,22 +12,18 @@
 #define PIN_LCD_DC 11 //режима ввода данных - Данные/Команды
 #define PIN_LCD_DIN 12 //Вход данных SPI
 #define PIN_LCD_CLK 13 //Тактирующий SPI
-
 #define PIN_SM_SPEED A0
 #define PIN_SPINDLE_SPEED A1
 
 //#include <SPI.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_PCD8544.h> //Nokia 5110 LCD Displays
-
 #include <PID_v1.h>
-
 #include <AccelStepper.h>
 
 //PID
 double PID_setpoint_rpm, PID_input_rpm, PID_output_PWM;
 PID PID_SPINDLE(&PID_input_rpm, &PID_output_PWM, &PID_setpoint_rpm, 3, 0, 0, DIRECT);
-
 //LCD
 // Software SPI (slower updates, more flexible pin options):
 Adafruit_PCD8544 LCD = Adafruit_PCD8544(PIN_LCD_CLK, PIN_LCD_DIN, PIN_LCD_DC, PIN_LCD_CE, PIN_LCD_RST);
@@ -41,8 +37,17 @@ uint16_t TAHO_RPM = 0L;
 //stepper motor
 AccelStepper stepper_z(AccelStepper::DRIVER, PIN_SM_DRIVER_STEP, PIN_SM_DRIVER_DIR); //step, dir
 int16_t SM_speed = 0; //-500 0 + 500
+int8_t SM_speed_sign = 1;
 
 void setup() {
+  pinMode(PIN_TAHO_IN, INPUT);
+  pinMode(PIN_SPINDLE_PWM_OUT, OUTPUT);
+  pinMode(PIN_SM_DRIVER_STEP, OUTPUT);
+  pinMode(PIN_SM_DRIVER_DIR, OUTPUT);
+  pinMode(PIN_SM_BTN_UP, INPUT);
+  pinMode(PIN_SM_BTN_SET_POS_0, INPUT);
+  pinMode(PIN_SM_BTN_DOWN, INPUT);
+
   Serial.begin(9600);
   SM_init();
   TAHO_init();
