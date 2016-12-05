@@ -9,5 +9,7 @@ void TIMEMACHINE_loop() {
 
 void TIMEMACHINE_1000ms() {
   TAHO_calc_PRM();
-  //Serial.println(TAHO_RPM, DEC);
+
+  PID_SerialReceive(); //PID TUNE DESCTOP
+  PID_SerialSend();  //PID TUNE DESCTOP
 }

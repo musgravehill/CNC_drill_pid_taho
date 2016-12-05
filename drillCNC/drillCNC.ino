@@ -20,7 +20,13 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_PCD8544.h> //Nokia 5110 LCD Displays
 
+#include <PID_v1.h>
+
 #include <AccelStepper.h>
+
+//PID
+double PID_setpoint, PID_input, PID_output;
+PID PID_SPINDLE(&PID_input, &PID_output, &PID_setpoint,3,0,0, DIRECT); 
 
 //LCD
 // Software SPI (slower updates, more flexible pin options):
@@ -41,9 +47,15 @@ void setup() {
   SM_init();
   TAHO_init();
   LCD_init();
+  PID_init();
 }
 
 void loop() {
+   PID_SPINDLE.Compute();
+   analogWrite(PIN_SPINDLE_PWM_OUT,PID_output);
+
+   TIMEMACHINE_loop();
+  
   if (digitalRead(4)) {
     stepper_z.runSpeed();
   }
