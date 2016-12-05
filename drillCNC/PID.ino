@@ -1,8 +1,13 @@
 
 void PID_init() {
   PID_SPINDLE.SetMode(AUTOMATIC);
-  PID_setpoint = 0;
-  PID_input = 4;
+  PID_setpoint_rpm = 0;
+  PID_input_rpm = 0;
+}
+
+void PID_LOOP() {
+  PID_SPINDLE.Compute();
+  analogWrite(PIN_SPINDLE_PWM_OUT, PID_output_PWM);
 }
 
 
@@ -58,13 +63,13 @@ void PID_SerialReceive()
   // read it into the system
   if (index == 26  && (Auto_Man == 0 || Auto_Man == 1) && (Direct_Reverse == 0 || Direct_Reverse == 1))
   {
-    PID_setpoint = double(foo.asFloat[0]);
+    PID_setpoint_rpm = double(foo.asFloat[0]);
     //Input=double(foo.asFloat[1]);       // * the user has the ability to send the
     //   value of "Input"  in most cases (as
     //   in this one) this is not needed.
     if (Auto_Man == 0)                    // * only change the output if we are in
     { //   manual mode.  otherwise we'll get an
-      PID_output = double(foo.asFloat[2]);    //   output blip, then the controller will
+      PID_output_PWM = double(foo.asFloat[2]);    //   output blip, then the controller will
     }                                     //   overwrite.
 
     double p, i, d;                       // * read in and set the controller tunings
@@ -89,11 +94,11 @@ void PID_SerialReceive()
 void PID_SerialSend()
 {
   Serial.print("PID ");
-  Serial.print(PID_setpoint);
+  Serial.print(PID_setpoint_rpm);
   Serial.print(" ");
-  Serial.print(PID_input);
+  Serial.print(PID_input_rpm);
   Serial.print(" ");
-  Serial.print(PID_output);
+  Serial.print(PID_output_PWM);
   Serial.print(" ");
   Serial.print(PID_SPINDLE.GetKp());
   Serial.print(" ");

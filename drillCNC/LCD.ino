@@ -13,3 +13,7 @@ void LCD_init() {
   LCD.println(0xDEADBEEF, HEX);
   LCD.display();
 }
+
+//  stepper_z.currentPosition => z-axis in mm
+//  TAHO_RPM 
+//

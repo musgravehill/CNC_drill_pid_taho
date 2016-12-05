@@ -13,8 +13,8 @@
 #define PIN_LCD_DIN 12 //Вход данных SPI
 #define PIN_LCD_CLK 13 //Тактирующий SPI
 
-//A0 SM SPEED
-//A1 SPINDLE SPEED
+#define PIN_SM_SPEED A0
+#define PIN_SPINDLE_SPEED A1
 
 //#include <SPI.h>
 #include <Adafruit_GFX.h>
@@ -25,22 +25,22 @@
 #include <AccelStepper.h>
 
 //PID
-double PID_setpoint, PID_input, PID_output;
-PID PID_SPINDLE(&PID_input, &PID_output, &PID_setpoint,3,0,0, DIRECT); 
+double PID_setpoint_rpm, PID_input_rpm, PID_output_PWM;
+PID PID_SPINDLE(&PID_input_rpm, &PID_output_PWM, &PID_setpoint_rpm, 3, 0, 0, DIRECT);
 
 //LCD
 // Software SPI (slower updates, more flexible pin options):
 Adafruit_PCD8544 LCD = Adafruit_PCD8544(PIN_LCD_CLK, PIN_LCD_DIN, PIN_LCD_DC, PIN_LCD_CE, PIN_LCD_RST);
-
 //TIMEMACHINE
-uint32_t TIMEMACHINE_prevMicros_223ms = 0L;
+uint32_t TIMEMACHINE_prevMicros_100ms = 0L;
+uint32_t TIMEMACHINE_prevMicros_500ms = 0L;
 uint32_t TIMEMACHINE_prevMicros_1000ms = 0L;
 //taho
 volatile uint16_t TAHO_rotationCount = 0L;
 uint16_t TAHO_RPM = 0L;
 //stepper motor
-AccelStepper stepper_z(AccelStepper::DRIVER, 2, 3); //step, dir
-int16_t SM_speedPrev = 0; //-500 0 + 500
+AccelStepper stepper_z(AccelStepper::DRIVER, PIN_SM_DRIVER_STEP, PIN_SM_DRIVER_DIR); //step, dir
+int16_t SM_speed = 0; //-500 0 + 500
 
 void setup() {
   Serial.begin(9600);
@@ -51,23 +51,7 @@ void setup() {
 }
 
 void loop() {
-   PID_SPINDLE.Compute();
-   analogWrite(PIN_SPINDLE_PWM_OUT,PID_output);
-
-   TIMEMACHINE_loop();
-  
-  if (digitalRead(4)) {
-    stepper_z.runSpeed();
-  }
-
-  uint32_t  TIMEMACHINE_currMillis = millis();
-  if ((TIMEMACHINE_currMillis - TIMEMACHINE_prevMicros_223ms) > 223L) {
-    int sensorValue = analogRead(A1);
-    int speed_new = 8 * sensorValue;
-    if (abs(SM_speedPrev - speed_new) > 32 ) {
-      stepper_z.setSpeed(speed_new);
-      SM_speedPrev = speed_new;
-    }
-    TIMEMACHINE_prevMicros_223ms = TIMEMACHINE_currMillis;
-  }
+  PID_LOOP();
+  TIMEMACHINE_loop();
+  SM_buttons();
 }

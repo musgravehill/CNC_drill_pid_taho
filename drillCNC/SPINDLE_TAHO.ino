@@ -7,6 +7,11 @@ void TAHO_interrupt () {
 }
 
 void TAHO_calc_PRM() {
-  TAHO_RPM = TAHO_rotationCount * 60;
+  TAHO_RPM = TAHO_rotationCount * 600; //10* 100ms * countRotation  * 60 = rot per minute
   TAHO_rotationCount = 0;
+  PID_input_rpm = TAHO_RPM;
+}
+
+void SPINDLE_SPEED_SET() {
+  PID_setpoint_rpm = 30 * analogRead(PIN_SPINDLE_SPEED);
 }
