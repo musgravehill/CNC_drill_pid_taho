@@ -9,5 +9,5 @@ void TIMEMACHINE_loop() {
 
 void TIMEMACHINE_1000ms() {
   TAHO_calc_PRM();
-  Serial.println(TAHO_RPM, DEC);
+  //Serial.println(TAHO_RPM, DEC);
 }
