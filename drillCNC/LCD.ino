@@ -5,6 +5,7 @@ void LCD_init() {
 
 
   // text display tests
+  LCD.setContrast(60);
   LCD.setTextSize(1);
   LCD.setTextColor(BLACK);
   LCD.setCursor(0, 0);
@@ -12,6 +13,8 @@ void LCD_init() {
   LCD.setTextSize(2);
   LCD.println(0xDEADBEEF, HEX);
   LCD.display();
+
+  
 }
 
 //  stepper_z.currentPosition => z-axis in mm

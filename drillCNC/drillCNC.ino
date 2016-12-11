@@ -34,6 +34,7 @@ uint32_t TIMEMACHINE_prevMicros_1000ms = 0L;
 //taho
 volatile uint16_t TAHO_rotationCount = 0L;
 uint16_t TAHO_RPM = 0L;
+uint32_t TAHO_prev_ms = 0L;
 //stepper motor
 AccelStepper stepper_z(AccelStepper::DRIVER, PIN_SM_DRIVER_STEP, PIN_SM_DRIVER_DIR); //step, dir
 int16_t SM_speed = 0; //-500 0 + 500

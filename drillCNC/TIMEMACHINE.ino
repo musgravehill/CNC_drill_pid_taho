@@ -29,4 +29,16 @@ void TIMEMACHINE_500ms() {
 void TIMEMACHINE_1000ms() {
   PID_SerialReceive(); //PID TUNE DESCTOP
   PID_SerialSend();  //PID TUNE DESCTOP
+
+  //TEST
+  LCD.clearDisplay();
+  LCD.setTextSize(1);
+  LCD.setTextColor(BLACK);
+  LCD.setCursor(0, 0);
+  LCD.println(SM_speed, DEC);
+  LCD.println(TAHO_RPM, DEC);
+  
+  LCD.display();
+
+
 }
