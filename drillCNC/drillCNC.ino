@@ -40,6 +40,7 @@ AccelStepper stepper_z(AccelStepper::DRIVER, PIN_SM_DRIVER_STEP, PIN_SM_DRIVER_D
 int16_t SM_speed = 0; //-500 0 + 500
 int8_t SM_speed_sign = 1;
 
+
 void setup() {
   pinMode(PIN_TAHO_IN, INPUT);
   pinMode(PIN_SPINDLE_PWM_OUT, OUTPUT);

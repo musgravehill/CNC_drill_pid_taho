@@ -11,20 +11,21 @@ void LCD_init() {
 
 void LCD_info() {
   LCD.clearDisplay();
-  LCD.setTextSize(2);  
+
   LCD.setCursor(0, 0);
-  LCD.println(SM_speed, DEC);
+  LCD.setTextSize(1);
+  LCD.println("Z-offset mm");
+  LCD.setTextSize(2);
+  LCD.println(SM_get_Z_offset_mm(), 2);
+
+  LCD.drawLine(0, 24, 83, 24, BLACK);
+
+  LCD.setCursor(0, 26);
+  LCD.setTextSize(1);
+  LCD.println("Spindle RPM");
+  LCD.setTextSize(2);
   LCD.println(TAHO_RPM, DEC);
-  LCD.println(PID_output_PWM, DEC);
 
-  LCD.setTextSize(1);  
-  LCD.setCursor(66, 3);
-  LCD.println("mm");
-
-  LCD.setCursor(66, 19);
-  LCD.println("rpm");
-
-  
   LCD.display();
 }
 
