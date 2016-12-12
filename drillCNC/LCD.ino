@@ -1,22 +1,31 @@
 void LCD_init() {
   LCD.begin();
-  LCD.setContrast(50);
-  LCD.clearDisplay();
-
-
-  // text display tests
   LCD.setContrast(60);
-  LCD.setTextSize(1);
+  LCD.clearDisplay();
   LCD.setTextColor(BLACK);
-  LCD.setCursor(0, 0);
-  LCD.println("Hello, world!");
-  LCD.setTextSize(2);
-  LCD.println(0xDEADBEEF, HEX);
+  //tests
+  LCD.fillRect(0, 0, LCD.width(), LCD.height, BLACK);
   LCD.display();
-
-  
+  delay(1);
 }
 
-//  stepper_z.currentPosition => z-axis in mm
-//  TAHO_RPM 
-//
+void LCD_info() {
+  LCD.clearDisplay();
+  LCD.setTextSize(2);  
+  LCD.setCursor(0, 0);
+  LCD.println(SM_speed, DEC);
+  LCD.println(TAHO_RPM, DEC);
+  LCD.println(PID_output_PWM, DEC);
+
+  LCD.setTextSize(1);  
+  LCD.setCursor(2, 40);
+  LCD.println("mm");
+
+  LCD.setCursor(22, 40);
+  LCD.println("RPM");
+
+  
+  LCD.display();
+}
+
+

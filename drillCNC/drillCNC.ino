@@ -23,7 +23,7 @@
 
 //PID
 double PID_setpoint_rpm, PID_input_rpm, PID_output_PWM;
-PID PID_SPINDLE(&PID_input_rpm, &PID_output_PWM, &PID_setpoint_rpm, 3, 0, 0, DIRECT);
+PID PID_SPINDLE(&PID_input_rpm, &PID_output_PWM, &PID_setpoint_rpm, 3, 0, 0, REVERSE); //REVERSE =>invert PWM for H11L1(inverted)  //DIRECT
 //LCD
 // Software SPI (slower updates, more flexible pin options):
 Adafruit_PCD8544 LCD = Adafruit_PCD8544(PIN_LCD_CLK, PIN_LCD_DIN, PIN_LCD_DC, PIN_LCD_CE, PIN_LCD_RST);

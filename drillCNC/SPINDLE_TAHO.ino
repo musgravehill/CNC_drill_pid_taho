@@ -16,5 +16,5 @@ void TAHO_calc_PRM() {
 }
 
 void SPINDLE_SPEED_SET() {
-  PID_setpoint_rpm = map(30 * analogRead(PIN_SPINDLE_SPEED), 0, 30000, 0, 1024);
+  PID_setpoint_rpm = analogRead(PIN_SPINDLE_SPEED);
 }
