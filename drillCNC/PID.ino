@@ -1,13 +1,11 @@
 
 void PID_init() {
   PID_SPINDLE.SetMode(AUTOMATIC);
-  PID_setpoint_rpm = 0;
-  PID_input_rpm = 0;
 }
 
 void PID_LOOP() {
   PID_SPINDLE.Compute();
-  analogWrite(PIN_SPINDLE_PWM_OUT, PID_output_PWM);
+  analogWrite(PIN_SPINDLE_PWM_OUT, (255 - PID_output_PWM)); // invert PWM for H11L1(inverted)
 }
 
 

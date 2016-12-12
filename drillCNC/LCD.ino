@@ -4,7 +4,7 @@ void LCD_init() {
   LCD.clearDisplay();
   LCD.setTextColor(BLACK);
   //tests
-  LCD.fillRect(0, 0, LCD.width(), LCD.height, BLACK);
+  LCD.fillRect(0, 0, 84, 48, BLACK);
   LCD.display();
   delay(1);
 }
@@ -18,11 +18,11 @@ void LCD_info() {
   LCD.println(PID_output_PWM, DEC);
 
   LCD.setTextSize(1);  
-  LCD.setCursor(2, 40);
+  LCD.setCursor(66, 3);
   LCD.println("mm");
 
-  LCD.setCursor(22, 40);
-  LCD.println("RPM");
+  LCD.setCursor(66, 19);
+  LCD.println("rpm");
 
   
   LCD.display();
