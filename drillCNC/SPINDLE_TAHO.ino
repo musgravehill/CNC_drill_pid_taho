@@ -10,7 +10,7 @@ void TAHO_calc_PRM() {
   //cli();
   uint32_t  TAHO_curr_ms = millis();    
   TAHO_RPM = TAHO_rotationCount * 60000 / (TAHO_curr_ms - TAHO_prev_ms); //rot per minute   60 000ms = 60s = 1 minute
-  PID_input_0_1023 = map(TAHO_RPM, 0, 30000, 0, 1023);
+  PID_input_0_1023 = map(TAHO_RPM, 0, 9000, 0, 1023);
   TAHO_rotationCount = 0L; 
   TAHO_prev_ms = TAHO_curr_ms;    
   //sei();

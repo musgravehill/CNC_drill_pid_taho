@@ -91,7 +91,7 @@ void setup()
   size(windowWidth , windowHeight);
 
   println(Serial.list());                                           // * Initialize Serial
-  myPort = new Serial(this, "COM6", 9600);                //   Communication with
+  myPort = new Serial(this, "COM3", 9600);                //   Communication with
   myPort.bufferUntil(10);                                           //   the Arduino
 
   controlP5 = new ControlP5(this);                                  // * Initialize the various
