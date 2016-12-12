@@ -18,16 +18,18 @@ void TIMEMACHINE_loop() {
 }
 
 void TIMEMACHINE_100ms() {
-  TAHO_calc_PRM();
+  
 }
 
-void TIMEMACHINE_500ms() {
+void TIMEMACHINE_500ms() {  
   SM_SPEED_SET();
   SPINDLE_SPEED_SET();
+  LCD_info_z_axis_mm();
 }
 
 void TIMEMACHINE_1000ms() {
+  TAHO_calc_PRM();  
   PID_SerialReceive(); //PID TUNE DESCTOP
   PID_SerialSend();  //PID TUNE DESCTOP
-  LCD_info();
+  LCD_info_rpm();
 }

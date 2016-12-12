@@ -4,7 +4,7 @@ void SM_init() {
 }                                                           //|
 //|
 void SM_SPEED_SET() {                                       //|
-  SM_speed = 8 * analogRead(PIN_SM_SPEED);  //////////////-----
+  SM_speed = map(analogRead(PIN_SM_SPEED), 0, 1023, 0, 100);  //////////////-----
   stepper_z.setSpeed(SM_speed_sign * SM_speed);
 }
 
@@ -25,6 +25,6 @@ void SM_buttons() {
 }
 
 float SM_get_Z_offset_mm() {
-  return stepper_z.currentPosition() * 0.2; //  steps for 1 rotation => offset by screw 2..4 mm for 1 rotation
+  return stepper_z.currentPosition() * 0.0001; //  steps for 1 rotation => offset by screw 2..4 mm for 1 rotation
 }
 

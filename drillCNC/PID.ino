@@ -61,7 +61,7 @@ void PID_SerialReceive()
   // read it into the system
   if (index == 26  && (Auto_Man == 0 || Auto_Man == 1) && (Direct_Reverse == 0 || Direct_Reverse == 1))
   {
-    PID_setpoint_rpm = double(foo.asFloat[0]);
+    PID_setpoint_0_1023 = double(foo.asFloat[0]);
     //Input=double(foo.asFloat[1]);       // * the user has the ability to send the
     //   value of "Input"  in most cases (as
     //   in this one) this is not needed.
@@ -92,9 +92,9 @@ void PID_SerialReceive()
 void PID_SerialSend()
 {
   Serial.print("PID ");
-  Serial.print(PID_setpoint_rpm);
+  Serial.print(PID_setpoint_0_1023);
   Serial.print(" ");
-  Serial.print(PID_input_rpm);
+  Serial.print(PID_input_0_1023);
   Serial.print(" ");
   Serial.print(PID_output_PWM);
   Serial.print(" ");
