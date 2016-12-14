@@ -1,0 +1,14 @@
+Question
+I am using an IR4427S to drive an IRF3205. How do I pick the resistor to use in series with the MOSFET gate? What purpose does the resistor serve and how does it effect MOSFET rise and fall times? Also, how do I calculate the power disipated by the IR4427S to make sure it is less than the maximum allowable power disipation?
+Answer
+The series gate resistor with HEXFET® MOSFET and IGBTS controls the switch on and off times. It is in series with the output impedance of the gate driver circuit. With HEXFET® MOSFET and IGBTS there is a parasitic capacitance between the gate and source/emitter and between gate and drain/collector. When a switch on voltage is applied to the gate, the gate to source/emitter capacitance will commence to charge up and the device will not start to switch until the gate threshold voltage is reached. As conduction starts then the gate to drain/collector capacitance starts to charge.
+
+It is desireable to minimise the duration of the turn on and off phases as during these times the devices are not fully switched and are in a high dissipation mode, i.e while there is a significant voltage across their outputs there is also significant current flow. With higher drain/collector currents, particularly when switching inductive loads, there is a conflict in the requirement to switch the parts as quickly as possible but to not introduce unacceptably high levels of di/dt induced voltage spiking that could impede the switch on or off and in extreme conditions generate spikes that could irrepairably damage the HEXFET® MOSFET or IGBTS, particularly their gate insulations.
+
+In practical circuits, series resistor values in the range 10 to 500 Ohms are typical. In highly inductive load circuits, higher value resistance values necessary to control turn on spiking can be too high for a fast turn off. In which case by-passing the resistor with an anti-parallel diode or diode and resistor in series can permit optimisation of both turn on and turn off times for a given application. 
+
+To read more about the switching requirements of HEXFET® MOSFET and IGBTs please read AN-937. 
+
+The quiescent current of the IR4427 is 200uA maximum. So the quiescent power dissipation is 200uA multipled by the applied Vs. When the outputs are active, the peak currents sourced or sunk by these should come from or be absorbed by the decoupling capacitors, so the output peak current values will not contribute to the overall dissipation within the IC.
+
+To determine the maximum internal junction temperature of the IC, multiply the quiescent power dissipation by the Rthj-a and add the maximum ambient temperature. A tj maximum of 150C is the safe limit of operation beyond which the device is likely to become permanently damaged. Reducing the tj max experienced by the part in an application to below the specified tj max value, will increase the inherent reliability by about double for every 10 degree C the tj is reduced.
