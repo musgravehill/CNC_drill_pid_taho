@@ -1,0 +1,404 @@
+try{
+;(function(){
+	"use strict";
+	if("querySelector" in document !== true) return null;
+	var tag, 
+	_arp = {
+		mappath: function(o) {
+			var map = o.map,
+				pattern = o.pattern,
+				pathname = window.location.pathname,
+				pl = "",
+				matches = pathname.match(pattern),
+				match = "";
+			if(matches) {
+				match = matches[0];
+			}
+			if (match in map) {
+				pl = map[match];
+			}
+			return pl;
+		},
+		
+		fn: function(selector) {
+			return selector();
+		},
+		
+		opn: function(selector){
+			var txt = this.text(selector),
+			result 	=[],
+			matches = txt.match(/((\d+(?=\d?(?=[A-Z-])))|([A-Z]+(?=[A-Z]?(?=[0-9-]))))[\w-/#]{4,15}/g);
+			if(matches){
+				matches = this._uniq(matches);
+				for( var i =0,  l=matches.length; i<l; i++ ){
+					if(matches[i].match(/[a-z]+/g)) continue;
+					if(matches[i].replace(/[^A-Z0-9]+/g,"").length < 5) continue;
+					if(!matches[i].match(/[A-Z]+/,"")) continue; 
+					if(!matches[i].match(/[0-9]+/,"")) continue;
+					result.push( matches[i] );
+				}
+			}
+			result = result.splice(0,3);
+			return result;
+		}, 
+		
+		text: function(selector){
+			var el = document.querySelector(selector);
+			return el ? el.innerText : "";
+		},
+		
+		queryvar: function(key){
+			var regex = new RegExp("[\\?&]" + key + "=([^&#]*)"),
+				results = regex.exec(location.search);
+			return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));			
+		},
+		pathsegment: function(pos){
+			var segments = window.location.pathname.split("/");
+			if(segments.length>=pos){
+				return segments[pos];
+			} else {
+				return "";
+			}
+		},
+		_uniq: function(input){
+			var out = [], test = {};
+			for( var i = 0, l = input.length; i < l; i++){
+				var v = input[i];
+				if(!test.hasOwnProperty(v)){
+					test[v]=true;
+					out.push(v);
+				}				
+			}
+			return out;
+		},
+		
+		run: function(options){
+			var rules = this._match(options.map),
+				args = {};
+			if(rules){
+				var action = rules[0], 
+					url = options.tag_uri+"?website="+options.website+"&action="+action,
+					args_num=0;
+				if(window._dp) {
+					url += "&pass=" + window._dp.pass;
+				}
+				for(var arg in rules[1]){
+					if(rules[1].hasOwnProperty(arg)){
+						var value = this._evaluate( rules[1][arg]);
+						if(value.toString()!=""){
+							args[arg] = value;
+							url+= "&" + arg + "=" + encodeURIComponent( value );
+							args_num++;
+						}
+					}
+				}
+				if(args_num > 0){
+					url += "&cb=" + (new Date).getTime() + "." + parseInt( Math.random() * 99999 );
+					//console.log(url);
+					
+					if(tag && tag.parent){
+						tag.parentNode.removeChild(tag);
+					}
+					tag = document.createElement("iframe");
+					tag.setAttribute("src", url);
+					tag.style.width="1px";
+					tag.style.width="1px";
+					tag.style.visibility = "hidden";
+					document.body.appendChild(tag);
+				}
+			}
+			
+			if(window._dp) {
+				var _dp = window._dp;
+				_dp.options = options;
+				_dp.rules = rules;
+				_dp.args = args;
+				if(_dp.callback) {
+					_dp.callback();
+				}
+			}
+		},
+		
+		_evaluate: function(spec){
+			var key, value;
+			for(var k in spec){
+				if(spec.hasOwnProperty(k)){
+					key = k; value=spec[k];
+					break;
+				}
+			}
+			if(k && typeof this[k]=="function"){
+				var result =  this[k](value);
+				return result;
+			}
+		},
+		_match: function(map){
+			var pathname = window.location.pathname;
+			for(var i in map){
+				if(!map.hasOwnProperty(i)) continue;
+				var pattern = i.replace(/\*/g,"[^/]+").replace(/\//g,"\\/"),
+					re = new RegExp("^"+pattern +"\/?$");
+				if(re.test( pathname )){
+					return map[i];
+				}
+			}
+		}
+		
+	};	
+	var options = {};
+	options.tag_uri = "//reach.siliconexpert.com/tag.php";
+	
+	
+	//////////////////////////////////////
+	var mappath = function() {
+		var pathname = window.location.pathname,
+		map = {
+			"/accircuits/ac-waveform.html": "power management development boards and kits",
+			"/accircuits/sinusoidal-waveform.html": "power management development boards and kits",
+			"/accircuits/average-voltage.html": "power management development boards and kits",
+			"/accircuits/rms-voltage.html": "power management development boards and kits",
+			"/accircuits/phase-difference.html": "power management development boards and kits",
+			"/accircuits/phasors.html": "power management development boards and kits",
+			"/accircuits/complex-numbers.html": "power management development boards and kits",
+			"/accircuits/ac-resistance.html": "power management development boards and kits",
+			"/accircuits/ac-inductance.html": "power management development boards and kits",
+			"/accircuits/ac-capacitance.html": "power management development boards and kits",
+			"/accircuits/series-circuit.html": "power management development boards and kits",
+			"/accircuits/parallel-circuit.html": "power management development boards and kits",
+			"/accircuits/series-resonance.html": "power management development boards and kits",
+			"/accircuits/parallel-resonance.html": "power management development boards and kits",
+			"/accircuits/reactive-power.html": "power management development boards and kits",
+			"/accircuits/harmonics.html": "power management development boards and kits",
+			"/accircuits/passive-components.html": "power management development boards and kits",
+			"/amplifier/amp_1.html": "amplifiers misc",
+			"/amplifier/amp_2.html": "amplifiers misc",
+			"/amplifier/amp_3.html": "MOSFET",
+			"/amplifier/mosfet-amplifier.html": "MOSFET",
+			"/amplifier/amp_4.html": "amplifiers misc",
+			"/amplifier/amp_5.html": "amplifiers misc",
+			"/amplifier/amp_6.html": "amplifiers misc",
+			"/amplifier/amp_7.html": "amplifiers misc",
+			"/amplifier/emitter-resistance.html": "amplifiers misc",
+			"/amplifier/amplifier-classes.html": "amplifiers misc",
+			"/amplifier/transistor-biasing.html": "amplifiers misc",
+			"/amplifier/input-impedance-of-an-amplifier.html": "amplifiers misc",
+			"/amplifier/frequency-response.html": "amplifiers misc",
+			"/attenuators/attenuator.html": "fiber optic attenuator",
+			"/attenuators/l-pad-attenuator.html": "fiber optic attenuator",
+			"/attenuators/t-pad-attenuator.html": "fiber optic attenuator",
+			"/attenuators/bridged-t-attenuator.html": "fiber optic attenuator",
+			"/attenuators/pi-pad-attenuator.html": "fiber optic attenuator",
+			"/attenuators/passive-attenuator.html": "fiber optic attenuator",
+			"/binary/bin_1.html": "data conversion development boards and kits",
+			"/binary/bin_2.html": "data conversion development boards and kits",
+			"/binary/binary-coded-decimal.html": "data conversion development boards and kits",
+			"/binary/bin_3.html": "data conversion development boards and kits",
+			"/binary/bin_4.html": "data conversion development boards and kits",
+			"/binary/signed-binary-numbers.html": "data conversion development boards and kits",
+			"/binary/bin_5.html": "data conversion development boards and kits",
+			"/boolean/bool_1.html": "programmable logic development boards and kits",
+			"/boolean/bool_2.html": "programmable logic development boards and kits",
+			"/boolean/bool_3.html": "programmable logic development boards and kits",
+			"/boolean/bool_4.html": "programmable logic development boards and kits",
+			"/boolean/bool_5.html": "programmable logic development boards and kits",
+			"/boolean/bool_6.html": "programmable logic development boards and kits",
+			"/boolean/bool_7.html": "programmable logic development boards and kits",
+			"/boolean/bool_8.html": "programmable logic development boards and kits",
+			"/capacitor/cap_1.html": "capacitor other",
+			"/capacitor/cap_2.html": "capacitor other",
+			"/capacitor/cap_3.html": "capacitor other",
+			"/capacitor/cap_4.html": "capacitor other",
+			"/capacitor/cap_5.html": "capacitor other",
+			"/capacitor/cap_6.html": "capacitor other",
+			"/capacitor/cap_7.html": "capacitor other",
+			"/capacitor/cap_8.html": "capacitor other",
+			"/capacitor/cap_9.html": "capacitor other",
+			"/capacitor/capacitive-voltage-divider.html": "capacitor other",
+			"/capacitor/ultracapacitors.html": "capacitor other",
+			"/combination/comb_2.html": "multiplexer",
+			"/combination/comb_3.html": "multiplexer",
+			"/combination/comb_1.html": "data conversion development boards and kits",
+			"/combination/comb_4.html": "data conversion development boards and kits",
+			"/combination/comb_5.html": "data conversion development boards and kits",
+			"/combination/comb_6.html": "data conversion development boards and kits",
+			"/combination/comb_7.html": "data conversion development boards and kits",
+			"/combination/binary-subtractor.html": "data conversion development boards and kits",
+			"/combination/comb_8.html": "data conversion development boards and kits",
+			"/counter/count_1.html": "counter shift register",
+			"/counter/count_2.html": "counter shift register",
+			"/counter/count_3.html": "counter shift register",
+			"/counter/count_4.html": "counter shift register",
+			"/counter/bcd-counter-circuit.html": "counter shift register",
+			"/counter/simple-led-flasher.html": "counter shift register",
+			"/dccircuits/dcp_1.html": "power management development boards and kits",
+			"/dccircuits/dcp_2.html": "power management development boards and kits",
+			"/dccircuits/dcp_3.html": "power management development boards and kits",
+			"/dccircuits/dcp_4.html": "power management development boards and kits",
+			"/dccircuits/dcp_5.html": "power management development boards and kits",
+			"/dccircuits/dcp_6.html": "power management development boards and kits",
+			"/dccircuits/dcp_7.html": "power management development boards and kits",
+			"/dccircuits/dcp_8.html": "power management development boards and kits",
+			"/dccircuits/dcp_9.html": "power management development boards and kits",
+			"/dccircuits/dcp_10.html": "power management development boards and kits",
+			"/diode/diode_1.html": "rectifier",
+			"/diode/diode_2.html": "rectifier",
+			"/diode/diode_3.html": "rectifier",
+			"/diode/diode_4.html": "rectifier",
+			"/diode/diode_5.html": "rectifier",
+			"/diode/diode_6.html": "rectifier",
+			"/diode/diode_7.html": "zener",
+			"/diode/diode_8.html": "led",
+			"/diode/bypass-diodes.html": "rectifier",
+			"/diode/diode-clipping-circuits.html": "rectifier",
+			"/electromagnetism/electromagnetism.html": "inductor kits",
+			"/electromagnetism/magnetism.html": "inductor kits",
+			"/electromagnetism/electromagnets.html": "inductor kits",
+			"/electromagnetism/magnetic-hysteresis.html": "inductor kits",
+			"/electromagnetism/electromagnetic-induction.html": "inductor kits",
+			"/electromagnetism/hall-effect.html": "inductor kits",
+			"/filter/filter_1.html": "filter other",
+			"/filter/filter_2.html": "filter other",
+			"/filter/filter_3.html": "filter other",
+			"/filter/filter_4.html": "filter other",
+			"/filter/filter_5.html": "filter other",
+			"/filter/filter_6.html": "filter other",
+			"/filter/filter_7.html": "filter other",
+			"/filter/filter_8.html": "filter other",
+			"/filter/band-stop-filter.html": "filter other",
+			"/filter/second-order-filters.html": "filter other",
+			"/filter/state-variable-filter.html": "filter other",
+			"/inductor/inductor.html": "inductor kits",
+			"/inductor/inductance.html": "inductor kits",
+			"/inductor/mutual-inductance.html": "inductor kits",
+			"/inductor/series-inductors.html": "inductor kits",
+			"/inductor/parallel-inductors.html": "inductor kits",
+			"/inductor/lr-circuits.html": "inductor kits",
+			"/inductor/ac-inductors.html": "inductor kits",
+			"/io/io_1.html": "specialized sensor",
+			"/io/io_2.html": "proximity sensor",
+			"/io/io_3.html": "temperature and humidity sensors",
+			"/io/io_4.html": "light sensor",
+			"/io/io_5.html": "electric linear actuator",
+			"/io/io_6.html": "electric linear actuator",
+			"/io/io_7.html": "brushed dc motor",
+			"/io/io_8.html": "audio indicator and alerts",
+			"/io/io_9.html": "audio indicator and alerts",
+			"/io/input-interfacing-circuits.html": "switch toggle",
+			"/io/output-interfacing-circuits.html": "brushed dc motor",
+			"/logic/logic_1.html": "gates",
+			"/logic/logic_2.html": "gates",
+			"/logic/logic_3.html": "gates",
+			"/logic/logic_4.html": "gates",
+			"/logic/logic_5.html": "gates",
+			"/logic/logic_6.html": "gates",
+			"/logic/logic_7.html": "gates",
+			"/logic/logic_8.html": "gates",
+			"/logic/logic_9.html": "gates",
+			"/logic/logic_10.html": "gates",
+			"/opamp/opamp_1.html": "op amp",
+			"/opamp/opamp_2.html": "op amp",
+			"/opamp/opamp_3.html": "op amp",
+			"/opamp/opamp_4.html": "op amp",
+			"/opamp/opamp_5.html": "op amp",
+			"/opamp/opamp_6.html": "op amp",
+			"/opamp/opamp_7.html": "op amp",
+			"/opamp/opamp_8.html": "op amp",
+			"/opamp/op-amp-building-blocks.html": "op amp",
+			"/opamp/op-amp-monostable.html": "op amp",
+			"/opamp/op-amp-multivibrator.html": "op amp",
+			"/opamp/op-amp-comparator.html": "op amp",
+			"/oscillator/oscillators.html": "oscillator misc",
+			"/oscillator/hartley.html": "oscillator misc",
+			"/oscillator/colpitts.html": "oscillator misc",
+			"/oscillator/rc_oscillator.html": "oscillator misc",
+			"/oscillator/wien_bridge.html": "oscillator misc",
+			"/oscillator/crystal.html": "oscillator misc",
+			"/power/thyristor.html": "thyristor",
+			"/power/thyristor-circuit.html": "thyristor",
+			"/power/triac.html": "thyristor",
+			"/power/diac.htm": "thyristor",
+			"/power/insulated-gate-bipolar-transistor.html": "igbt chip",
+			"/power/unijunction-transistor.html": "gp bjt",
+			"/power/switch-mode-power-supply.html": "ac to dc switching converters",
+			"/rc/rc_1.html": "voltage supervisory",
+			"/rc/rc_2.html": "voltage supervisory",
+			"/rc/rc_3.html": "capacitor other",
+			"/resistor/res_1.html": "resistor kits",
+			"/resistor/res_2.html": "resistor kits",
+			"/resistor/res_3.html": "resistor kits",
+			"/resistor/res_4.html": "resistor kits",
+			"/resistor/res_5.html": "resistor kits",
+			"/resistor/res_6.html": "resistor kits",
+			"/resistor/res_7.html": "resistor kits",
+			"/resistor/res_8.html": "resistor kits",
+			"/resistor/res_9.html": "resistor kits",
+			"/resistor/varistor.html": "resistor kits",
+			"/resistor/resistor-colour-code-wheel.html": "resistor kits",
+			"/sequential/seq_1.html": "gates",
+			"/sequential/seq_2.html": "gates",
+			"/sequential/seq_3.html": "gates",
+			"/sequential/seq_4.html": "gates",
+			"/sequential/seq_5.html": "gates",
+			"/sequential/seq_6.html": "gates",
+			"/sequential/conversion-of-flip-flops.html": "gates",
+			"/systems/electronic-system.html": "sensor development boards and kits",
+			"/systems/open-loop-system.html": "i/o controller",
+			"/systems/closed-loop-system.html": "i/o controller",
+			"/systems/feedback-systems.html": "i/o controller",
+			"/systems/negative-feedback.html": "i/o controller",
+			"/transformer/transformer-basics.html": "power transformer",
+			"/transformer/transformer-construction.html": "power transformer",
+			"/transformer/transformer-loading.html": "power transformer",
+			"/transformer/multiple-winding-transformers.html": "power transformer",
+			"/transformer/auto-transformer.html": "power transformer",
+			"/transformer/current-transformer.html": "power transformer",
+			"/transformer/three-phase-transformer.html": "power transformer",
+			"/transistor/tran_1.html": "rf bjt",
+			"/transistor/tran_2.html": "rf bjt",
+			"/transistor/tran_3.html": "rf bjt",
+			"/transistor/tran_4.html": "rf bjt",
+			"/transistor/tran_5.html": "rf bjt",
+			"/transistor/tran_6.html": "rf bjt",
+			"/transistor/tran_7.html": "rf bjt",
+			"/transistor/tran_8.html": "rf bjt",
+			"/transistor/darlington-transistor.html": "rf bjt",
+			"/waveforms/waveforms.html": "flip flop",
+			"/waveforms/monostable.html": "monostable multivibrator",
+			"/waveforms/bistable.html": "flip flop",
+			"/waveforms/astable.html": "flip flop",
+			"/waveforms/generators.html": "flip flop",
+			"/waveforms/555_timer.html": "flip flop",
+			"/waveforms/555_oscillator.html": "flip flop",
+			"/blog/passive-devices.html": "resistor kits",
+			"/blog/pulse-width-modulation.html": "brushed dc motor",
+			"/blog/convert-atx-psu-to-bench-supply.html": "connector power",
+			"/blog/variable-voltage-power-supply.html": "linear regulator",
+			"/blog/optocoupler.html": "optocoupler",
+			"/blog/voltage-multiplier-circuit.html": "voltage supervisory",
+			"/blog/wheatstone-bridge.html": "op amp",
+			"/blog/i-v-characteristic-curves.html": "zener",
+			"/blog/christmas-lights-sequencer-circuit.html": "rectifier",
+			"/blog/7-segment-display-tutorial.html": "led",
+			"/blog/unregulated-power-supply.html": "rectifier",
+			"/blog/relay-switch-circuit.html": "electromechanical relay"
+		},
+		pl = "";
+		if (pathname in map) {
+			pl = map[pathname];
+		}
+		return pl;
+	};
+	options.website = "electronics-tutorials";
+	options.map = {
+		"/*/*.html" : [ "pl", { 
+				pl: { fn: mappath }
+			}]
+	};
+		
+	_arp.run(options);
+}());
+} catch (_e){
+	if(window.console && window.console.log)
+	window.console.log(_e);
+}
+

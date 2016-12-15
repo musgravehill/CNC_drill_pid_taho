@@ -1,0 +1,186 @@
+/*
+* Theme Name: Electronics Tutorials v2.0
+* Version: 1.0
+* Author: Aspencore Web Team 2016
+*/
+@import url(../css/bootstrap.min.css);
+@import url(../css/animation.css);
+@import url(../css/main.css);
+@import url(../css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,300,300italic,400italic,500,500italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Martel:400,300,600,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+@import url(../css/oldstyle.css);
+.respad {
+    overflow-x: hidden; }
+
+.arpw-ul .arpw-li .box {
+    padding: 15px 0 0;
+    background: #FFF;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(50, 50, 50, 0.15);
+    -moz-box-shadow: 0 1px 1px 0 rgba(50, 50, 50, 0.15);
+    box-shadow: 0 1px 1px 0 rgba(50, 50, 50, 0.15); }
+
+.arpw-ul .arpw-li a {
+    color: #414042; }
+.arpw-ul .arpw-li a:hover {
+    color: #000;
+    text-decoration: none; }
+
+@media (min-width: 768px) {
+    .arpw-ul .arpw-li div.arpw-thumbnail {
+        overflow: hidden;
+        min-height: 244px;
+        max-height: 244px;
+        margin: 0 30px;
+        text-align: center;
+        -webkit-display: -webkit-box;
+        -webkit-display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; } }
+
+@media (max-width: 767px) {
+    .arpw-ul .arpw-li div.arpw-thumbnail {
+        margin: 0 30px;
+        text-align: center;
+        align-items: center;
+        justify-content: center; } }
+
+.arpw-ul .arpw-li .arpw-title {
+    display: block;
+    margin: 0 0 20px;
+    padding: 30px 30px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 32px;
+    white-space: pre-line;
+    /* These are technically the same, but use both */
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    /* Instead use this non-standard one: */
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */ }
+
+.arpw-ul .arpw-li .arpw-time {
+    display: block;
+    margin: 0 0 10px;
+    padding: 0 30px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    color: #ababab;
+    line-height: 100%; }
+@media (max-width: 767px) {
+    .arpw-ul .arpw-li .arpw-time {
+        padding: 0 20px; } }
+
+.arpw-ul .arpw-li .arpw-summary {
+    display: block;
+    margin: 0 0 10px;
+    padding: 0 30px 30px;
+    font-family: 'Martel', serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
+    white-space: pre-line;
+    /* These are technically the same, but use both */
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    /* Instead use this non-standard one: */
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */ }
+
+.wpcf7-form {
+    padding: 30px 0; }
+.wpcf7-form .contact-notice {
+    position: relative;
+    width: 98%;
+    margin-left: 6px;
+    margin-right: 7px; }
+.wpcf7-form .contact-notice .wpcf7-response-output {
+    width: auto; }
+.wpcf7-form .wpcf7-not-valid-tip {
+    display: none !important; }
+.wpcf7-form .wpcf7-not-valid {
+    border: 2px solid red; }
+.wpcf7-form input::-webkit-input-placeholder, .wpcf7-form textarea::-webkit-input-placeholder {
+    opacity: 1 !important;
+    color: #414042; }
+.wpcf7-form input:-moz-placeholder, .wpcf7-form textarea:-moz-placeholder {
+    opacity: 1 !important;
+    color: #414042; }
+.wpcf7-form input::-moz-placeholder, .wpcf7-form textarea::-moz-placeholder {
+    opacity: 1 !important;
+    color: #414042; }
+.wpcf7-form input:-ms-input-placeholder, .wpcf7-form textarea:-ms-input-placeholder {
+    opacity: 1 !important;
+    color: #414042; }
+.wpcf7-form input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #414042; }
+.wpcf7-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #414042; }
+.wpcf7-form .wpcf7-submit {
+    padding: 16px 0 15px;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    color: #FFF;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 100%;
+    border: 0;
+    background: #414042; }
+.wpcf7-form .wpcf7-submit:hover {
+    background: #000; }
+
+/* overrides*/
+@page {
+    size: auto;
+    margin: 10px 0;
+}
+
+a[href]:after {
+    content: "";
+}
+* {-webkit-print-color-adjust:exact; !important}
+
+.top-bar-1-wrap,
+.home-top-ads,
+.survey-wrapper,
+.mouser-menu,
+.tiles-list,
+.sidebar,
+.widget_most_popular_tags,
+.ads-full,
+p.cptchpr_block,
+.social_box_buttons-excerpt .addthis_toolbox,
+.social_box_buttons .addthis_toolbox,
+.content-nav {
+    display: none !important;
+}
+.body-cont.survey-active,
+.row-cnt.row {
+    padding: 0 !important;
+}
+.body-cont .content-wrap .box,
+.head-box.clearfix {
+    border: 1px solid #ccc;
+}
+.body-cont .content-wrap .post-wrap .top-icn.icn-power:before {
+    -webkit-print-color-adjust:exact; !important
+}
+
+#linkpartners ul li > a:after {
+    content: " [" attr(href) "] ";
+    font-size: 12px;
+}

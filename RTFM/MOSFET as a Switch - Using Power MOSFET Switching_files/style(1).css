@@ -1,0 +1,201 @@
+/*
+* settings page
+*/
+.cptchpr_example_fields_actions {
+	float: left;
+	height: 18px;
+	width: 140px;
+	position:relative;
+	top: -7px;
+	padding:2px 0;
+}
+.cptchpr_example_fields_actions img {
+	position:relative;
+	width:30px;
+	top: 6px;
+}
+.cptchpr_block {
+	direction: ltr;
+}
+#cptchpr_settings_form_block {
+	position: relative;
+}
+.cptchpr_bg {
+	background: #4D4D4D;
+	opacity: 0.11;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+}
+.cptchpr_limit_label {
+	display: block;
+}
+input.cptchpr_settings_input {
+	width: 252px;
+}
+.cptchpr_how_to_use {
+	float: right;
+}
+.cptchpr_images_example {
+	height: 33px;
+}
+.cptchpr_images_example img {
+	top: 0;
+}
+.cptchpr_images_example .cptchpr_label {
+	position: relative;
+	top: -6px;
+	left: 8px;
+}
+
+/* 
+ * network
+ */
+.cptchpr_network_apply_all {
+	padding-left: 15px;
+}
+
+/* 
+ * whitelist 
+ */
+.cptchpr_whitelist_form table td {
+	vertical-align: top;
+}
+.cptchpr_whitelist_buttons .alignleft {
+	margin-right: 10px;
+}
+.cptchpr_save_ip {
+	margin-left: 10px;
+}
+
+/*
+ * RTL
+ */
+.rtl .cptchppr_how_to_use {
+	float: left;
+}
+.rtl .cptchpr_block {
+	direction: rtl;
+}
+
+/*
+* frontend
+*/
+.cptchpr_block label {
+	word-wrap: break-word;
+}
+.cptchp_label:hover {
+	cursor: pointer;
+}
+form input.cptchpr_input {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+.cptchpr_whitelist_message {
+	font-style: italic;
+	color: #008000;
+	font-weight: normal !important;
+}
+.cptchpr_block {
+	display: block !important;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	word-spacing: normal !important;
+}
+.cptchpr_title {
+	display: block;
+	word-wrap: break-word;
+	padding-bottom: 5px;
+	clear: both;
+}
+.cptchpr_wrap {
+	display: table-row !important;
+	position: relative;
+	clear: both;
+}
+.cptchpr_label,
+.cptchpr_reload_button_wrap {
+	display: table-cell;
+	margin: 5px 0;
+	vertical-align: middle;
+	line-height: 1;
+}
+.cptchpr_span {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+}
+.cptchpr_img {
+	width: 40px;
+	max-width: 40px !important;
+	height: auto;
+	top: 0;
+	z-index: 2;
+}
+.cptchpr_reduce {
+	position: absolute;
+}
+.cptchpr_reload_button {
+	width: 2rem;
+	height: 2rem;
+	font-size: 2rem;
+	vertical-align: middle;
+}
+.cptchpr_reload_button.cptchpr_active {
+	opacity: 0.7;
+}
+
+@media only screen and ( max-width: 782px ) {
+	#cptchpr_whitelist_search p.search-box {
+		position: static;
+	}
+	#cptchpr_whitelist .tablenav.top {
+		display: none;
+	}
+	.cptchpr_reload_button {
+		width: 48px;
+		height: 48px;
+		font-size: 48px;
+	}
+	.cptchpr_how_to_use {
+		float: none;
+		text-align: left;
+	}
+	.cptchpr_save_ip {
+		margin-left: 0;
+	}
+	.rtl .cptchpr_how_to_use {
+		text-align: right;
+	}
+	#cptchpr_whitelist .column-ip_from,
+	#cptchpr_whitelist .column-ip_to,
+	#cptchpr_whitelist .column-add_time {
+		display: none;
+	}
+}
+
+@media only screen and ( max-width: 480px ) {
+	.bws_help_box.cptchpr_thumb_block {
+		display: none;
+	}
+	#cptchpr_whitelist .bulkactions {
+		float: none;
+	}
+	#cptchpr_whitelist .tablenav-pages {
+		display: block;
+		margin-bottom: 10px;
+		float: none;
+		clear: both;
+	}
+	#cptchpr_whitelist .tablenav-pages .displaying-num {
+		position: static;
+	}
+	.cptchpr_reload_button {
+		margin: 0;
+	}
+	#cptchpr_whitelist .column-add_reason {
+		display: none;
+	}
+}

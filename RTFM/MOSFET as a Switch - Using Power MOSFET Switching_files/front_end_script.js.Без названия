@@ -1,0 +1,111 @@
+( function( $ ) {
+	$( document ).ready( function() {
+		$( '.wpcf7-submit, input[name="ac_form_submit"], .ac-reply-cancel, .acomment-reply' ).click( function( event ) {
+			cptchpr_reload( $( this ), null );
+		});
+		cptchpr_init();
+	});
+})(jQuery);
+
+/**
+ * Add custom events for captcha`s elevents
+ * @param  void
+ * @return void
+ */
+function cptchpr_init() {
+	(function($) {
+		/* reload captcha */
+		$( '.cptchpr_reload_button' ).click( function( event ) {
+			cptchpr_reload( $( this ), event );
+		});
+
+		/* enlarge images by click on mobile devices */
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Windows Phone|Opera Mini/i.test( navigator.userAgent ) && cptchpr_vars.enlarge == '1' ) {
+			$( '.cptchpr_img' ).click( function( event ) {
+				event.preventDefault();
+				var reduce = $( this ).hasClass( 'cptchpr_reduce' );
+				if ( $( this ).hasClass( 'cptchpr_reduce' ) )
+					$( this ).css({ zIndex: 1 }).animate({ width: $( this ).width() / 2 + 'px' }, 800 ).toggleClass( 'cptchpr_reduce' );
+				else
+					$( this ).css({ position: 'absolute', zIndex: 2 }).animate({ width: $( this ).width() * 2 + 'px' }, 800 ).toggleClass( 'cptchpr_reduce' );
+				$( '.cptchpr_span' ).children( '.cptchpr_reduce' ).not( this ).each( function() {
+					$( this ).css({ zIndex: 1 }).animate({ width: $( this ).width() / 2 + 'px' }, 800 ).toggleClass( 'cptchpr_reduce' );
+				});
+			}).parent( '.cptchpr_span' ).each( function() {
+				var image = $( this ).children( 'img' );
+				if ( image.length ) {
+					$( this ).css({ 
+						width: image.width() + 'px',
+						height: image.height() + 'px',
+					});
+				}
+			});
+		}
+	})(jQuery);
+}
+
+/**
+ * Reload captcha
+ */
+function cptchpr_reload( object, event ) {
+	(function($) {
+		$( object ).each( function() {
+			var block_class =  $( this ).attr( 'class' ), 
+				captcha;
+			if ( $.type( block_class ) === 'string' && block_class.match( /cptchpr_reload_button/ ) ) {
+				if ( $.type( event ) === 'object' )
+					event.preventDefault();
+				captcha = $( this ).parent().parent( '.cptchpr_wrap' );
+				$( this ).addClass( 'cptchpr_active' );
+			} else {
+				captcha = $( this ).closest( 'form' ).find( '.cptchpr_wrap' );
+			}
+			if ( captcha.length ) {
+				var captcha_block = captcha.parent(),
+					input         = captcha.find( 'input:text' ),
+					input_name    = input.attr( 'name' ),
+					input_class   = input.attr( 'class' ).replace( /cptchpr_input/, '' ).replace( /^\s+|\s+$/g, '' ),
+					form_slug     = captcha_block.find( 'input[name="cptchpr_form"]' ).val(); 
+				$.ajax({
+					type: 'POST',
+					url: cptchpr_vars.ajaxurl,
+					data: {
+						action:              'cptchpr_reload',
+						cptchpr_nonce:       cptchpr_vars.nonce,
+						cptchpr_input_name:  input_name,
+						cptchpr_input_class: input_class,
+						cptchpr_form_slug:   form_slug
+					},
+					success: function( result ) {
+						captcha_block.find( 'input[type="hidden"], .cptchpr_reload_button_wrap, .cptchpr_reload_button' ).remove();
+						var forms = [ 'default', 'wp_login', 'wp_register', 'wp_comments', 'wp_lost_password' ];
+						if ( cptchpr_in_array( form_slug, forms ) || input_class === '' )
+							captcha.replaceWith( result ); /* for default forms */
+						else
+							captcha_block.replaceWith( result );  /* for custom forms */
+						cptchpr_init();
+					},
+					error : function ( xhr, ajaxOptions, thrownError ) {
+						alert( xhr.status );
+						alert( thrownError );
+					}
+				});
+			}
+		});
+	})(jQuery);
+}
+
+/**
+ * This function is an analog of "in_array" function for PHP
+ */
+function cptchpr_in_array( needle, haystack ) {
+	var found = false, 
+		key;
+	for ( key in haystack ) {
+		if ( haystack[ key ] === needle ) {
+			found = true;
+			break;
+		}
+	}
+	return found;
+}
