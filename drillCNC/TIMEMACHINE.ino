@@ -1,9 +1,9 @@
 void TIMEMACHINE_loop() {
   uint32_t  TIMEMACHINE_currMillis = millis();
 
-  if ((TIMEMACHINE_currMillis - TIMEMACHINE_prevMicros_100ms) > 100L) {
-    TIMEMACHINE_100ms();
-    TIMEMACHINE_prevMicros_100ms = TIMEMACHINE_currMillis;
+  if ((TIMEMACHINE_currMillis - TIMEMACHINE_prevMicros_23ms) > 23L) {
+    TIMEMACHINE_23ms();
+    TIMEMACHINE_prevMicros_23ms = TIMEMACHINE_currMillis;
   }
 
   if ((TIMEMACHINE_currMillis - TIMEMACHINE_prevMicros_500ms) > 500L) {
@@ -17,8 +17,8 @@ void TIMEMACHINE_loop() {
   }
 }
 
-void TIMEMACHINE_100ms() {
-  
+void TIMEMACHINE_23ms() {
+  TAHO_calc_PRM();  
 }
 
 void TIMEMACHINE_500ms() {  
@@ -27,8 +27,7 @@ void TIMEMACHINE_500ms() {
   LCD_info_z_axis_mm();
 }
 
-void TIMEMACHINE_1000ms() {
-  TAHO_calc_PRM();  
+void TIMEMACHINE_1000ms() {  
   PID_SerialReceive(); //PID TUNE DESCTOP
   PID_SerialSend();  //PID TUNE DESCTOP
   LCD_info_rpm();

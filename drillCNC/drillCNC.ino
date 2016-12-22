@@ -23,12 +23,12 @@
 
 //PID
 double PID_setpoint_0_1023, PID_input_0_1023, PID_output_PWM; //0..1023, 0..1023, 0..255
-PID PID_SPINDLE(&PID_input_0_1023, &PID_output_PWM, &PID_setpoint_0_1023, 0.3, 0.1, 0, DIRECT); 
+PID PID_SPINDLE(&PID_input_0_1023, &PID_output_PWM, &PID_setpoint_0_1023, 0.03, 0.4, 0, DIRECT);
 //LCD
 // Software SPI (slower updates, more flexible pin options):
 Adafruit_PCD8544 LCD = Adafruit_PCD8544(PIN_LCD_CLK, PIN_LCD_DIN, PIN_LCD_DC, PIN_LCD_CE, PIN_LCD_RST);
 //TIMEMACHINE
-uint32_t TIMEMACHINE_prevMicros_100ms = 0L;
+uint32_t TIMEMACHINE_prevMicros_23ms = 0L;
 uint32_t TIMEMACHINE_prevMicros_500ms = 0L;
 uint32_t TIMEMACHINE_prevMicros_1000ms = 0L;
 //taho
@@ -48,7 +48,7 @@ void setup() {
   pinMode(PIN_SM_DRIVER_DIR, OUTPUT);
   pinMode(PIN_SM_BTN_UP, INPUT);
   pinMode(PIN_SM_BTN_SET_POS_0, INPUT);
-  pinMode(PIN_SM_BTN_DOWN, INPUT);
+  pinMode(PIN_SM_BTN_DOWN, INPUT);  
 
   Serial.begin(9600);
   SM_init();
