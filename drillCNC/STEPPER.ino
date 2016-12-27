@@ -25,6 +25,6 @@ void SM_buttons() {
 }
 
 float SM_get_Z_offset_mm() {
-  return stepper_z.currentPosition() * 0.0001; //  steps for 1 rotation => offset by screw 2..4 mm for 1 rotation
+  return stepper_z.currentPosition() * 0.001; //  steps for 1 rotation => offset by screw 2..4 mm for 1 rotation
 }
 

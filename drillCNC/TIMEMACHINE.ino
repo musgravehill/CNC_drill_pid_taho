@@ -19,8 +19,8 @@ void TIMEMACHINE_loop() {
 
 void TIMEMACHINE_111ms() {
   //1200 RPM with 2 holes taho
-  // 1200 RPM *2 holes \ 60 = 40 pulses per second
-  //so, for 111 ms: 40*111\1000 = 4.44 pulses per 111 ms
+  // 1200 RPM *4 holes \ 60 = 80 pulses per second
+  //so, for 111 ms: 80*111\1000 = 8.88 pulses per 111 ms
   //do NOT set faster!
   TAHO_calc_PRM();
 }
@@ -32,7 +32,7 @@ void TIMEMACHINE_500ms() {
 }
 
 void TIMEMACHINE_1000ms() {
-  PID_SerialReceive(); //PID TUNE DESCTOP
-  PID_SerialSend();  //PID TUNE DESCTOP
+  //PID_SerialReceive(); //PID TUNE DESCTOP
+  //PID_SerialSend();  //PID TUNE DESCTOP
   LCD_info_rpm();
 }
