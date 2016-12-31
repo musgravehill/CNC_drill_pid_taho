@@ -1,5 +1,6 @@
 ///////////////////////
 
+
 #define PIN_TAHO_IN 2 //!2 Interrupt 
 #define PIN_SPINDLE_PWM_OUT 3//SPINDLE PWM OUT works on pins 3 5bug 6bug 9 10 11
 #define PIN_SM_DRIVER_STEP 4
@@ -48,7 +49,7 @@ void setup() {
   pinMode(PIN_SM_DRIVER_DIR, OUTPUT);
   pinMode(PIN_SM_BTN_UP, INPUT);
   pinMode(PIN_SM_BTN_SET_POS_0, INPUT);
-  pinMode(PIN_SM_BTN_DOWN, INPUT);  
+  pinMode(PIN_SM_BTN_DOWN, INPUT);    
 
   Serial.begin(9600);
   SM_init();
