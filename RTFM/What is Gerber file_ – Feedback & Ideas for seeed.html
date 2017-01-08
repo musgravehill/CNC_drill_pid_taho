@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)http://support.seeedstudio.com/knowledgebase/articles/493833-what-is-gerber-file -->
+<html lang="en" class="webkit chrome chrome55 win js ltr non-retina js rgba mdl-js orientation_landscape maxw_1280"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  
+  <title>What is Gerber file? – Feedback &amp; Ideas for seeed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="/33isDvEO04Lp2w6SeF5r8NzaILVLp+G22s93zhZlv3afvM8zihAQ9OkhvxFXaT8Q8X6hDv6tp/EWfYT3468Zw==">
+  <link rel="P3Pv1" href="http://support.seeedstudio.com/w3c/p3p.xml">
+
+    <link rel="canonical" href="http://support.seeedstudio.com/knowledgebase/articles/493833-what-is-gerber-file">
+
+    <script type="application/javascript" async="" defer="" src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/track.js.Без названия"></script><script type="text/javascript" async="" defer="" src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/saved_resource"></script><script type="text/javascript" async="" src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/mixpanel.js.Без названия"></script><script type="text/javascript" async="" src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/nORfI8dR8KHiLECiDYNUWQ.js.Без названия"></script><script type="text/javascript" async="" src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/ga.js.Без названия"></script><script type="text/javascript">
+    (function(window) {
+      var methods = ['log', 'dir', 'trace'];
+      
+      if (typeof window.console === 'undefined') {
+        window.console = {};
+      }
+      
+      for (var i in methods) {
+        if (!(methods[i] in window.console)) {          
+          window.console[methods[i]] = function() {};
+        }
+      }
+      
+    }(window));    
+  </script>
+
+  <script>
+    window.UserVoice || (window.UserVoice = []);
+  </script>
+
+  
+
+  <link rel="stylesheet" media="all" href="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/site2-2a2ff795288ba7710c69fc3e7853b7df.css">
+
+
+  <!--[if lt IE 7]>
+    <link rel="stylesheet" media="screen" href="//assets0.uvcdn.com/pkg/clients/site2/ie-dd504534fd5adc0f02c51328941904bf.css" />
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+    <script src="//assets1.uvcdn.com/pkg/clients/site2/lt_IE_9-2c58c1ee1dbefb700ef2333ae314783d.js"></script>
+  <![endif]-->
+
+    <style type="text/css">
+  
+  /*
+  -----------------------------------------------------------
+    Link color
+  -----------------------------------------------------------
+  */
+  
+  .uvCustomLink-color,
+  a,
+  .uvHelp,
+  .uvTabSelect,
+  .uvTab-dropdown .uvFieldPlaceholder,
+  .uvModule-session .vcard .uvRememberMe a,
+  .uvBreadcrumbs a,
+  .uvStyle-linkArrow {
+    color: #878787;
+  }
+  
+  .uvCustomLink-background,
+  .uvTab-selected,
+  .uvTab-selected .uvFieldSelect,
+  .uvPagination .current {
+    background-color: #878787;
+  }
+  
+  /*
+  -----------------------------------------------------------
+    Primary color
+  -----------------------------------------------------------
+  */
+  
+  .uvCustomPrimary-color {
+    color: #34495e;
+  }
+  
+  .uvCustomPrimary-background,
+  .uvUserBadgeLabel {
+    background-color: #34495e;
+  }
+  
+  /*
+  -----------------------------------------------------------
+    Background color
+  -----------------------------------------------------------
+  */
+  
+  .uvCustomBackground-color {
+    color: #defad5;
+  }
+  
+  .uvCustomBackground-background,
+  .uvMasthead {
+    background-color: #defad5;
+  }
+  
+  /*
+  -----------------------------------------------------------
+    Status colors
+  -----------------------------------------------------------
+  */
+  
+  .uvStyle-status-under-consideration {
+    background-color: #83de0b;
+    color: #FFF;
+  }
+  .uvStyle-status-needs-more-details {
+    background-color: #ed28ed;
+    color: #FFF;
+  }
+  .uvStyle-status-planned {
+    background-color: #F0BA00;
+    color: #FFF;
+  }
+  .uvStyle-status-in-process {
+    background-color: #6FBC00;
+    color: #FFF;
+  }
+  .uvStyle-status-no-foreseeable-plans-to-implement {
+    background-color: #b8b8b2;
+    color: #FFF;
+  }
+  .uvStyle-status-launched {
+    background-color: #7D7EDF;
+    color: #FFF;
+  }
+</style>
+
+
+    
+
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  
+  // UserVoice Profile
+  _gaq.push(['_setAccount', 'UA-3735534-21']);
+  _gaq.push(['_setDomainName', 'seeedstudio.com']);
+  _gaq.push(['_addIgnoredRef', 'www.uservoice.com']);
+  // Do this to comply with some privacy policies
+  _gaq.push(['_gat._anonymizeIp']);
+  
+    var clientIdentifier = "Site";
+    _gaq.push(['_setCustomVar', 1, 'Client', clientIdentifier, 3]);
+  
+    _gaq.push(['_trackPageview']);
+  
+  // Custom Profile
+  
+    _gaq.push(function() {
+        // create the second async tracker
+        _gaq._createAsyncTracker('UA-3735534-21', 'uvTracker');
+    });
+    _gaq.push(['uvTracker._setAccount', 'UA-86288920-1']);
+    _gaq.push(['uvTracker._setCustomVar', 1, 'Client', clientIdentifier, 3]);
+    _gaq.push(['_setDomainName', 'seeedstudio.com']);
+    _gaq.push(['_gat._anonymizeIp']);
+
+      _gaq.push(['uvTracker._trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  
+  function trackEvent(name, label) {
+    if (label == null) {
+      label = "Site";
+    }
+    _gaq.push(['_trackEvent', "UserVoice", name, label]);
+      _gaq.push(['uvTracker._trackEvent', "UserVoice", name, label]);
+  }
+  
+</script>
+<style></style><style type="text/css" media="screen">.uv-icon{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;display:inline-block;cursor:pointer;position:relative;-moz-transition:all 300ms;-o-transition:all 300ms;-webkit-transition:all 300ms;transition:all 300ms;width:39px;height:39px;position:fixed;z-index:100002;opacity:0.8;-moz-transition:opacity 100ms;-o-transition:opacity 100ms;-webkit-transition:opacity 100ms;transition:opacity 100ms}.uv-icon.uv-bottom-right{bottom:10px;right:12px}.uv-icon.uv-top-right{top:10px;right:12px}.uv-icon.uv-bottom-left{bottom:10px;left:12px}.uv-icon.uv-top-left{top:10px;left:12px}.uv-icon.uv-is-selected{opacity:1}.uv-icon svg{width:39px;height:39px}.uv-popover{font-family:sans-serif;font-weight:100;font-size:13px;color:black;position:fixed;z-index:100001}.uv-popover-content{-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;background:white;position:relative;width:325px;height:325px;-moz-transition:background 200ms;-o-transition:background 200ms;-webkit-transition:background 200ms;transition:background 200ms}.uv-bottom .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) 0 -10px 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) 0 -10px 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) 0 -10px 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-top .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) 0 10px 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) 0 10px 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) 0 10px 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-left .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) 10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) 10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) 10px 0 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-right .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) -10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) -10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) -10px 0 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-ie8 .uv-popover-content{position:relative}.uv-ie8 .uv-popover-content .uv-popover-content-shadow{display:block;background:black;content:'';position:absolute;left:-15px;top:-15px;width:100%;height:100%;filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius=15,MakeShadow=true,ShadowOpacity=0.30);z-index:-1}.uv-popover-tail{border:9px solid transparent;width:0;z-index:10;position:absolute;-moz-transition:border-top-color 200ms;-o-transition:border-top-color 200ms;-webkit-transition:border-top-color 200ms;transition:border-top-color 200ms}.uv-top .uv-popover-tail{bottom:-20px;border-top:11px solid white}.uv-bottom .uv-popover-tail{top:-20px;border-bottom:11px solid white}.uv-left .uv-popover-tail{right:-20px;border-left:11px solid white}.uv-right .uv-popover-tail{left:-20px;border-right:11px solid white}.uv-popover-loading{background:white;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;position:absolute;width:100%;height:100%;left:0;top:0}.uv-popover-loading-text{position:absolute;top:50%;margin-top:-0.5em;width:100%;text-align:center}.uv-popover-iframe-container{height:100%}.uv-popover-iframe{-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;overflow:hidden}.uv-is-hidden{display:none}.uv-is-invisible{display:block !important;visibility:hidden !important}.uv-is-transitioning{display:block !important}.uv-no-transition{-moz-transition:none !important;-webkit-transition:none !important;-o-transition:color 0 ease-in !important;transition:none !important}.uv-fade{opacity:1;-moz-transition:opacity 200ms ease-out;-o-transition:opacity 200ms ease-out;-webkit-transition:opacity 200ms ease-out;transition:opacity 200ms ease-out}.uv-fade.uv-is-hidden{opacity:0}.uv-scale-top,.uv-scale-top-left,.uv-scale-top-right,.uv-scale-bottom,.uv-scale-bottom-left,.uv-scale-bottom-right,.uv-scale-right,.uv-scale-right-top,.uv-scale-right-bottom,.uv-scale-left,.uv-scale-left-top,.uv-scale-left-bottom,.uv-slide-top,.uv-slide-bottom,.uv-slide-left,.uv-slide-right{opacity:1;-moz-transition:all 80ms ease-out;-o-transition:all 80ms ease-out;-webkit-transition:all 80ms ease-out;transition:all 80ms ease-out}.uv-scale-top.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(-15%);-ms-transform:scale(0.8) translateY(-15%);-webkit-transform:scale(0.8) translateY(-15%);transform:scale(0.8) translateY(-15%)}.uv-scale-top-left.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(-15%) translateX(-10%);-ms-transform:scale(0.8) translateY(-15%) translateX(-10%);-webkit-transform:scale(0.8) translateY(-15%) translateX(-10%);transform:scale(0.8) translateY(-15%) translateX(-10%)}.uv-scale-top-right.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(-15%) translateX(10%);-ms-transform:scale(0.8) translateY(-15%) translateX(10%);-webkit-transform:scale(0.8) translateY(-15%) translateX(10%);transform:scale(0.8) translateY(-15%) translateX(10%)}.uv-scale-bottom.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(15%);-ms-transform:scale(0.8) translateY(15%);-webkit-transform:scale(0.8) translateY(15%);transform:scale(0.8) translateY(15%)}.uv-scale-bottom-left.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(15%) translateX(-10%);-ms-transform:scale(0.8) translateY(15%) translateX(-10%);-webkit-transform:scale(0.8) translateY(15%) translateX(-10%);transform:scale(0.8) translateY(15%) translateX(-10%)}.uv-scale-bottom-right.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(15%) translateX(10%);-ms-transform:scale(0.8) translateY(15%) translateX(10%);-webkit-transform:scale(0.8) translateY(15%) translateX(10%);transform:scale(0.8) translateY(15%) translateX(10%)}.uv-scale-right.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(15%);-ms-transform:scale(0.8) translateX(15%);-webkit-transform:scale(0.8) translateX(15%);transform:scale(0.8) translateX(15%)}.uv-scale-right-top.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(15%) translateY(-10%);-ms-transform:scale(0.8) translateX(15%) translateY(-10%);-webkit-transform:scale(0.8) translateX(15%) translateY(-10%);transform:scale(0.8) translateX(15%) translateY(-10%)}.uv-scale-right-bottom.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(15%) translateY(10%);-ms-transform:scale(0.8) translateX(15%) translateY(10%);-webkit-transform:scale(0.8) translateX(15%) translateY(10%);transform:scale(0.8) translateX(15%) translateY(10%)}.uv-scale-left.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(-15%);-ms-transform:scale(0.8) translateX(-15%);-webkit-transform:scale(0.8) translateX(-15%);transform:scale(0.8) translateX(-15%)}.uv-scale-left-top.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(-15%) translateY(-10%);-ms-transform:scale(0.8) translateX(-15%) translateY(-10%);-webkit-transform:scale(0.8) translateX(-15%) translateY(-10%);transform:scale(0.8) translateX(-15%) translateY(-10%)}.uv-scale-left-bottom.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(-15%) translateY(10%);-ms-transform:scale(0.8) translateX(-15%) translateY(10%);-webkit-transform:scale(0.8) translateX(-15%) translateY(10%);transform:scale(0.8) translateX(-15%) translateY(10%)}.uv-slide-top.uv-is-hidden{-moz-transform:translateY(-100%);-ms-transform:translateY(-100%);-webkit-transform:translateY(-100%);transform:translateY(-100%)}.uv-slide-bottom.uv-is-hidden{-moz-transform:translateY(100%);-ms-transform:translateY(100%);-webkit-transform:translateY(100%);transform:translateY(100%)}.uv-slide-left.uv-is-hidden{-moz-transform:translateX(-100%);-ms-transform:translateX(-100%);-webkit-transform:translateX(-100%);transform:translateX(-100%)}.uv-slide-right.uv-is-hidden{-moz-transform:translateX(100%);-ms-transform:translateX(100%);-webkit-transform:translateX(100%);transform:translateX(100%)}
+</style><style type="text/css" media="print">#uvTab,.uv-tray,.uv-icon,.uv-popover,.uv-bubble{display:none!important}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+
+<body class="uv-primaryColor-dark uv-locale-en uv-direction-ltr uv-topic uv-topic-63002 uv-no-user uv-helpdesk uv-article-page">
+  <div id="fb-root" class=" fb_reset"><script src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/all.js.Без названия" async=""></script><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="f1b56c8bf5f11f8" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/ping.html" style="display: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/iPrOY23SGAp.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/iPrOY23SGAp(1).html" style="border: none;"></iframe></div></div></div>
+  <div class="uvPageContainer">
+
+      <header class="uvContainer uvMasthead ">
+  <div class="uvRow">
+    <div class="uvCol-12">
+      <div class="uvMastheadWrapper">
+        
+          <a class="uvMastheadHomeLink" href="http://support.seeedstudio.com/" title="Feedback &amp; Ideas for seeed">
+            <img class="uvMastheadLogo" src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/logo.png" alt="seeedstudio">
+          </a>
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+    
+
+
+
+<div class="uvContainer uvBody">
+  <div class="uvRow">
+    <div class="uvCol-8">
+      
+      <article>
+        <header class="uvPageHeader">
+          <h1 class="uvPageTitle uvCustomPrimary-color">What is Gerber file?</h1>
+          <div class="uvBreadcrumbs">
+              <a href="http://support.seeedstudio.com/knowledgebase/topics/63002-fusion-technical-support">← Fusion technical support</a>
+          </div>
+        </header>
+        <section class="uvFaq typeset">
+            <span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; line-height: 19.2000007629395px; background-color: rgb(255, 255, 255);">The&nbsp;</span>Gerber<span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; line-height: 19.2000007629395px; background-color: rgb(255, 255, 255);">&nbsp;format is an open 2D binary vector image file&nbsp;</span><span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; line-height: 19.2000007629395px; background-color: rgb(255, 255, 255);">format. It is the standard file used by printed circuit board (PCB) industry software to describe the printed circuit board images: copper layers, solder mask, legend, etc.</span><span style="color: rgb(41, 44, 51); font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; line-height: 19.600000381469727px; background-color: rgb(255, 255, 255);"><br><br><br>﻿</span><span style="color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Arial, Helvetica, sans-serif; font-size: 14.44444465637207px; font-style: normal; font-variant: normal; line-height: 23.33333396911621px; background-color: rgb(255, 255, 255);">Gerber files should be inside a .rar or.zip archive with standard file extensions:<br><b>Extension &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Layer</b><br></span><ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; line-height: 19.99997901916504px; list-style-type: none; color: rgb(89, 87, 87); background-color: rgb(255, 255, 255);"><li style="list-style-type: none;">pcbname.<b>GTL </b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-family: Helvetica, Arial, sans-serif; font-size: 14.44444465637207px; font-style: normal; font-variant: normal; line-height: 19.600000381469727px;">Top Copper</span>﻿&nbsp;</li><li style="list-style-type: none;">pcbname.<b>GTS</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: Helvetica, Arial, sans-serif; font-size: 14.44444465637207px; font-style: normal; font-variant: normal; line-height: 19.600000381469727px;">Top Soldermask&nbsp;</span>﻿</li><li style="list-style-type: none;">pcbname.<b>GTO</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: Helvetica, Arial, sans-serif; font-size: 14.44444465637207px; font-style: normal; font-variant: normal; line-height: 19.600000381469727px;">Top Silkscreen&nbsp;</span></li><li style="list-style-type: none;"><br></li></ul><ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; line-height: 19.99997901916504px; list-style-type: none; color: rgb(89, 87, 87); background-color: rgb(255, 255, 255);"><li style="list-style-type: none;">pcbname.<b>GBL</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: Helvetica, Arial, sans-serif; font-size: 14.44444465637207px; font-style: normal; font-variant: normal; line-height: 19.600000381469727px;">Bottom copper</span>﻿</li></ul><ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; line-height: 19.99997901916504px; list-style-type: none; color: rgb(89, 87, 87); background-color: rgb(255, 255, 255);"><li style="list-style-type: none;">pcbname.<b>GBS</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: Helvetica, Arial, sans-serif; font-size: 14.44444465637207px; font-style: normal; font-variant: normal; line-height: 19.600000381469727px;">Bottom Soldermask:&nbsp;</span>﻿</li><li style="list-style-type: none;"><span style="line-height: 1.4em;">pcbname.<b>GBO</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: Helvetica, Arial, sans-serif; font-size: 14.44444465637207px; font-style: normal; font-variant: normal; line-height: 19.600000381469727px;">Bottom Silkscreen:&nbsp;</span>﻿</span></li><li style="list-style-type: none;">pcbname.<b>TXT </b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: Helvetica, Arial, sans-serif; font-size: 14.44444465637207px; font-style: normal; font-variant: normal; line-height: 19.600000381469727px;">Drills</span>﻿</li><li style="list-style-type: none;">pcbname.<b>GML/GKO</b> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: Helvetica, Arial, sans-serif; font-size: 14.44444465637207px; font-style: normal; font-variant: normal; line-height: 19.600000381469727px;">*Board Outline:</span>﻿</li><li style="list-style-type: none;">﻿<br></li><li style="list-style-type: none;">4 layer board also need</li><li style="list-style-type: none;"><span style="line-height: 1.4em;">pcbname.<b>GL2</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-family: Helvetica, Arial, sans-serif; font-size: 14.44444465637207px; font-style: normal; font-variant: normal; line-height: 19.600000381469727px;">Inner Layer2</span></span></li><li style="list-style-type: none;">pcbname.<b>GL3</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="font-family: Helvetica, Arial, sans-serif; font-size: 14.44444465637207px; font-style: normal; font-variant: normal; line-height: 19.600000381469727px;">Inner Layer3</span>﻿</li></ul><span style="font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: bolder; color: rgb(41, 44, 51); background-color: rgb(255, 255, 255);">﻿Notes:&nbsp;</span><span style="color: rgb(41, 44, 51); font-family: Arial, sans-serif; font-size: 14px; font-variant: normal; line-height: 19.600000381469727px; background-color: rgb(255, 255, 255);">Gerber file must be RS-274X format. &nbsp;Drill file(pcbname.TXT) should be Excellon format. <br><b>PCB Outline is required.</b><br><br>Gerber file is used for manufacturing process.&nbsp;<br><br>Below is an picture on how to compress the necessary files.<br><br></span><img src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/520e9363757b7fa96f8b4573.png" alt="Zipping gerbers"><span style="color: rgb(41, 44, 51); font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; line-height: 19.600000381469727px; background-color: rgb(255, 255, 255);"><br></span><br><br><br><div></div>
+        </section>
+        <footer class="uvFaqFooter">
+          <span class="uvFaqAction uvFaqAction-helpful">
+            <button href="/api/v1/articles/493833/useful" class="uvStyle-button uvStyle-button-helpful">
+              <!--<img width="32" alt="smiley face" src="//assets0.uvcdn.com/pkg/clients/_icons/icon.smile.32px-7404a3b9fa862ace06fc90f307720ec8.png" />-->
+              <span class="uvStyle-button-label" data-washelpful="Great! Glad we could help.">This article was helpful</span>
+            </button>
+            <span style="display: none;">(thinking…)</span>
+            <!-- <span class="uvFieldEtc-thinking">(thinking…)</span> -->
+          </span>
+          <span class="uvStyle-separator">&nbsp;·&nbsp;</span>
+          <span class="uvFaqAction uvFaqAction-flag">
+            <a class="uvAnonymousOnly uvStyle-link" href="http://support.seeedstudio.com/site/signin?lang=en">Flag this article as inaccurate…</a><button class="uvFlagObject uvUserOnly uvUserOnly-inline uvStyle-link" data-success="Flagged" data-url="/api/v1/faqs/493833-what-is-gerber-file/flags?code=inaccurate" type="button">Flag this article as inaccurate…</button>
+          </span>
+            <span class="uvStyle-separator uvAdminOnly uvAdminOnly-inline">&nbsp;·&nbsp;</span>
+              <a href="http://support.seeedstudio.com/admin/faqs/493833" rel="nofollow" class="uvAdminOnly uvAdminOnly-inline">Admin →</a>
+          
+        </footer>
+      </article>
+      
+    </div>
+    
+    <div class="uvCol-4 uvSidebar uvCol-last">
+      <div class="uvModule uvModule-session" aria-live="polite" aria-relevant="additions removals">
+  <section class="uvModuleSection uvModuleSection-userbox uvModuleSection-signin">
+      <p class="uvStyle-signin">New and returning users may <a href="http://support.seeedstudio.com/signin">sign in</a></p>
+    <form novalidate="" class="uvjSigninStandalone uvSignin-prestine">
+      
+<fieldset class="uvSignin uvSignin-default uvFieldset" data-options="{&quot;subclass&quot;:&quot;StandaloneSignin&quot;}" aria-live="polite" aria-relevant="additions removals" data-subclass="StandaloneSignin">
+  <legend class="uvSigninLegend">Sign in</legend>
+  <div class="uvSigninMode" style="display:none">prestine</div>
+      <div class="uvField uvField-display_name uvField-first">
+        <label class="uvFieldInner" for="display_name_4874">
+          <span class="uvFieldPlaceholder">Your name</span>
+          <input class="uvFieldText" type="text" name="display_name" id="display_name_4874" title="Your name">
+        </label>
+      </div>
+      <div class="uvField uvField-email uvField-first">
+        <label class="uvFieldInner" for="email_4874">
+          <span class="uvFieldPlaceholder">Your email address</span>
+          <input class="uvFieldText" type="email" name="email" id="email_4874" value="" title="Your email address">
+        </label>
+        <div class="uvFieldEtc uvFieldEtc-unprotected">Check!</div>
+        <div class="uvFieldEtc uvFieldEtc-email_invalid">invalid email</div>
+        <div class="uvFieldEtc uvFieldEtc-thinking">(thinking…)</div>
+        <div class="uvFieldEtc uvFieldEtc-reset">Reset</div>
+        <div class="uvFieldEtc uvFieldEtc-providers">
+            <span class="uvFieldEtcLabel">or sign in with</span>
+            <ul>
+                            <li data-provider="facebook"><a href="https://graph.facebook.com/oauth/authorize?client_id=46468144668&amp;redirect_uri=https%3A%2F%2Fauth.uservoice.com%2Ffacebook%2F207256&amp;scope=email&amp;display=popup" tabindex="0" title="Sign in via Facebook"><img class="favicon" src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/facebook-8b92ce8bf5e8258f342c1990afd055fc.png" alt="facebook"></a></li>
+              <li data-provider="google"><a href="http://auth.uservoice.com/google/207256" tabindex="0" title="Sign in via Google"><img class="favicon" src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/google-3c303af007c64a872d4822fbac21253e.png" alt="google"></a></li>
+
+            </ul>
+        </div>
+      </div>
+      <div class="uvField uvField-authentication">
+        <ul class="uvFieldEtc uvFieldEtc-providers uvFieldEtc-third_party"></ul>
+        <img class="password" alt="Password icon" src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/password-d904f06a67a7b29d489489d3a35f548b.png">
+        <div class="password">
+          <label class="uvFieldInner" for="password_4874">
+            <span class="uvFieldPlaceholder">UserVoice password</span>
+            <input class="uvFieldPassword" type="password" name="password" id="password_4874" title="UserVoice password">
+          </label>
+          <div class="uvFieldEtc uvFieldEtc-password_invalid"></div>
+          <div class="uvFieldEtc uvFieldEtc-forgot_password"><a href="http://support.seeedstudio.com/users/forgot_password" class="uvFieldEtc-password_reset">Forgot password?</a></div>
+          <div class="uvFieldEtc uvFieldEtc-create_password"><a href="http://support.seeedstudio.com/users/forgot_password" class="uvFieldEtc-password_reset">Create a password</a></div>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+        <div class="uvField uvField-terms_implicit">
+          <span class="uvFieldInner">I agree to the <a target="_blank" rel="external" title="Opens in new window" href="http://support.seeedstudio.com/tos">terms of service</a></span>
+        </div>
+
+  <div class="uvField uvField-logged_in uvField-first">
+    <span>
+      Signed in as <span class="logged_in_as"></span>
+      (<a href="http://support.seeedstudio.com/logout">Sign out</a>)
+    </span>
+  </div>
+
+  <input type="hidden" name="uninitialized" value="true">
+</fieldset>
+
+      <div class="uvFormFlash uvFormFlash-error">
+  <div class="uvFormFlashMessage"></div>
+  <a class="uvFormFlashClose" href="http://support.seeedstudio.com/knowledgebase/articles/493833-what-is-gerber-file#close">Close</a>
+</div>
+
+<div class="uvFormFlash uvFormFlash-info">
+  <div class="uvFormFlashMessage"></div>
+  <a class="uvFormFlashClose" href="http://support.seeedstudio.com/knowledgebase/articles/493833-what-is-gerber-file#close">Close</a>
+</div>
+
+      <div class="submit_region">
+  <button class="uvFieldEtc-submit-button uvStyle-button">Sign in</button>
+  <ul class="button-states-language">
+    <li class="sign-in-button-text">Sign in</li>
+    <li class="sign-up-button-text">Sign up</li>
+  </ul>
+  <button class="uvFieldEtc-cancel-page">Cancel</button>
+</div>
+
+
+    </form>
+  </section>
+</div>
+
+      
+        <div class="uvModule uvModule-helpdesk">
+        <section class="uvModuleSection uvModuleSection-list">
+          <h1 class="uvModuleSectionHeader uvCustomPrimary-color"><a href="http://support.seeedstudio.com/knowledgebase/topics/63002-fusion-technical-support">Fusion technical support</a></h1>
+          <ol class="uvList uvList-articles">
+              <li class="uvListItem uvListItem-article uvListItem-selected"><a href="http://support.seeedstudio.com/knowledgebase/articles/493833-what-is-gerber-file">What is Gerber file?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/388503-what-are-the-pcb-panelization-rules">What are the PCB panelization rules?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/388403-how-to-export-the-drill-files-correctly">How to export the drill files correctly?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/387975-can-i-use-another-software-beside-eagle-to-generat">Can I use another software beside Eagle to generate the Gerber files?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/388405-what-is-the-correct-way-to-draw-the-silkscreen-on">What is the correct way to draw the silkscreen on the bottom side?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/388409-if-my-pcb-does-not-require-solder-mask-what-shoul">If my PCB does not require Solder Mask, what should I do?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/388410-if-my-pcb-do-not-require-drilling-holes-what-shou">If my PCB do not require Drilling Holes, what should i do ?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/388413-which-layer-should-i-use-in-eagle-for-milling">Which layer should I use in EAGLE for milling?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/388421-what-is-the-depth-of-the-v-cut">What is the depth of the v- cut?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/388427-if-my-pcb-s-do-not-have-the-silkscreen-how-can-i">If my PCB's do not have the silkscreen, how can I proceed with my PCBA order?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/443762-exporting-manufacturing-files-from-altium-designer">Exporting manufacturing files from Altium Designer</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/612798-export-pcb-gerber-from-cam">Export PCB gerber from Cam</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/613173-how-to-generate-gerber-from-kicad">How to generate gerber from KiCAD?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/635221-how-to-export-the-correct-drilling-layer-from-eagl">How to export the correct drilling layer from eagle</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/671572-what-is-the-minimum-inner-trace-width-for-4-layers">What is the Minimum inner trace width for 4 layers?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/671566-what-is-the-minimum-trace-width">What is the minimum trace width?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/671557-what-are-the-dimensions-for-dielectric-separation">What are the dimensions for Dielectric Separation thickness?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/671596-what-is-the-inner-layer-copper-thickness">What is the inner layer copper thickness?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/671608-what-is-the-range-for-the-drilling-hole-diameter">What is the range for the drilling hole diameter?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/734496-how-to-use-open-parts-library">How to Use Open Parts Library</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/888786-what-is-blind-buried-via">What is Blind/Buried Via?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/892659-what-is-the-the-min-track-spacing-for-1oz-2oz-3o">What is the The Min Track/Spacing for 1oz./2oz./3oz. Copper weight</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/906642-how-to-output-drill-file-correctly">How to output drill file correctly ?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/906684-is-the-board-outline-could-only-be-rectangle">Is the board outline could only be rectangle ?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/909267-what-is-the-layer">What is the layer?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/910767-what-is-half-cut-castellated-holes">What is Half-cut/Castellated Holes.</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/912045-v-cut-rules">V-cut rules</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/942234-how-can-i-do-if-i-do-not-required-to-make-plated-t">How can i do if i do not required to make plated through holes?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/388432-options-of-fiducial">Options of Fiducial</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/388431-what-is-the-size-of-the-fiducial">What is the size of the Fiducial?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/1084123-how-do-plated-through-slots-work-on-the-gerber">How do plated through slots work on the Gerber ?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/1086091-the-dimension-for-pcb">The dimension for PCB</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/1086097-the-material-for-fr-4-aluminum-board-fpc">The material for FR-4/Aluminum Board/FPC</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/1086106-the-thickness-of-pcb">The thickness of PCB</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/1086115-the-surface-finish-for-pcb">The surface finish for PCB</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/1086112-the-color-of-solder-mask">The color of solder mask</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/1086121-the-copper-weight-for-pcb">The copper weight for PCB</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/1086124-what-is-impedance-control">What is Impedance Control?</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/1089904-pcb-quantity">PCB quantity</a></li>
+              <li class="uvListItem uvListItem-article"><a href="http://support.seeedstudio.com/knowledgebase/articles/1118680-how-to-generate-the-gerber-files-from-altium-desig">How to generate the gerber files from Altium Designer</a></li>
+          </ol>
+        </section>
+      </div>          
+
+
+
+
+
+<div class="uvModule uvModule-mainSidebar">
+
+  <header class="uvModuleHeader hide" style="position: absolute;">
+    <!-- Header should be present for screenreaders, but hidden, we need an accessible class for this -->
+    <h1 class="uvCustomPrimary-color hidden"><span class="uvModuleTriggerTwirl"></span> Feedback and Knowledge Base</h1>
+    <!-- end -->
+  </header>
+
+  <section class="uvModuleSection uvModuleSection-search">
+    <form action="http://support.seeedstudio.com/api/v1/search?weight_minimum=40&amp;lang=en">
+      <div class="uvField uvField-search">
+        <label class="uvFieldInner" for="combined_search_sidebar">
+        <!-- this should be a search for knowledgebase and helpdesk. -->
+          <span class="uvFieldPlaceholder">Search</span>
+          <input class="uvFieldText" name="query" type="text" id="combined_search_sidebar">
+
+          <script type="text/x-jquery-tmpl" id="uvSearch-template-articles">
+            <h4 class="uvNavListItemSubtitle">${total_articles} {{if total_articles > 1}}articles{{else}}article{{/if}}</h4>
+            <ul class="uvList uvList-searchResults">
+              {{each(i, article) articles}}
+                <li class="uvListItem uvListItem-searchResult" data-search-weight="${article.weight}">
+                  <a href="${article.path}">${article.question}</a>
+                </li>
+              {{/each}}
+            </ul>
+            {{if more_articles}}
+              <p class="uvSearch-more-results"><a href="/search?filter=articles&query=${response_data.query}">More articles &rarr;</a></p>
+            {{/if}}
+          </script>
+
+          <script type="text/x-jquery-tmpl" id="uvSearch-template-ideas">
+            <h4 class="uvNavListItemSubtitle">${total_suggestions} {{if total_suggestions > 1}}ideas{{else}}idea{{/if}}</h4>
+            <ul class="uvList uvList-searchResults">
+              {{each(i, idea) suggestions}}
+                <li class="uvListItem uvListItem-searchResult" data-search-weight="${idea.weight}">
+                {{if idea.status && idea.status.name}}
+                  <em class="uvStyle-status uvStyle-status-${idea.status.key}"
+                      title="This idea is ${idea.status.name} ${$.tmplHelpers.toLocalDate(idea.updated_at, '- updated %date%')}">${idea.status.name}</em>
+                {{/if}}
+                  <a href="${idea.path}">
+                    ${idea.title}
+                  </a>
+                </li>
+              {{/each}}
+            </ul>
+            {{if more_suggestions}}
+              <p class="uvSearch-more-results"><a href="/search?filter=ideas&query=${response_data.query}">More ideas &rarr;</a></p>
+            {{/if}}
+          </script>
+
+          <script type="text/x-jquery-tmpl" id="uvSearch-template-title">
+            {{if searching}}
+              Searching&hellip;
+            {{else}}
+              <a href="/search?filter=merged&query=${query}">Search results</a>
+            {{/if}}
+          </script>
+        </label>
+        <button class="uvFieldButton uvStyle-button" type="submit"><span class="uvFieldButtonImage-sidebar">Search</span></button>
+          <div class="uvFieldEtc uvFieldEtc-thinking">(thinking…)</div>
+          <button type="reset" class="uvFieldEtc uvFieldEtc-reset">Reset</button>
+      </div>
+    </form>
+    <ul class="uvNavList">
+      <li class="uvNavListItem uvNavListItem-search uvSearch-results-container" style="display: none;">
+        <h2 class="uvNavListItemTitle uvSearch-results-title uvCustomPrimary-color">
+          Searching…
+        </h2>
+        <div id="uvSearch-results-articles" class="uvSearchResults uvSearchResults-articles"></div>
+        <div id="uvSearch-results-ideas" class="uvSearchResults uvSearchResults-ideas"></div>
+        <p class="uvNoResults">No results.</p>
+        <a href="http://support.seeedstudio.com/knowledgebase/articles/493833-what-is-gerber-file" class="uvSearch-results-clear">Clear search results</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="uvModuleSection">
+    <ul class="uvNavList">
+
+        <li class="uvNavListItem uvNavListItem-contactus">
+          <h2 class="uvNavListItemTitle">
+              <a id="contactus-touchpoint" class="uvLink-contactus-touchpoint uvStyle-link uvCustomLink-color">
+                Contact support
+              </a>
+          </h2>
+        </li>
+
+        <li class="uvNavListItem uvNavListItem-feedback">
+          <h2 class="uvNavListItemTitle">
+            <a class="uvLink-idea" href="http://support.seeedstudio.com/forums/243707-my-seeed-idea">Give feedback</a>
+          </h2>
+          <ul class="uvList uvList-forums" style="display:none;" data-tmpl="sidebarForumsTmpl">
+              <li class="uvListItem uvListItem-forum uvListItem-forum-243707">
+                <a href="http://support.seeedstudio.com/forums/243707-my-seeed-idea" title="View all ideas in My Seeed Idea">My Seeed Idea</a>&nbsp;<span class="uvStyle-count">370<span class="uvStyle-count-label"> ideas</span></span>
+              </li>
+          </ul>
+        </li>
+
+        <li class="uvNavListItem uvNavListItem-helpdesk">
+        <!-- popular articles in topics box  HELPDESK -->
+          <h2 class="uvNavListItemTitle">
+            <a class="uvLink-knowledgebase" href="http://support.seeedstudio.com/knowledgebase">Knowledge Base</a>
+          </h2>
+            <ul class="uvList uvList-topics">
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-56174">
+                    <a href="http://support.seeedstudio.com/knowledgebase/topics/56174-assurance" title="View all articles in Assurance">Assurance</a>&nbsp;<span class="uvStyle-count">2<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-129310">
+                    <a href="http://support.seeedstudio.com/knowledgebase/topics/129310-fusion-ordering-faq" title="View all articles in Fusion Ordering FAQ">Fusion Ordering FAQ</a>&nbsp;<span class="uvStyle-count">26<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-62840">
+                    <a href="http://support.seeedstudio.com/knowledgebase/topics/62840-fusion-specification" title="View all articles in Fusion Specification">Fusion Specification</a>&nbsp;<span class="uvStyle-count">8<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-63002 uvListItem-selected">
+                    <a href="http://support.seeedstudio.com/knowledgebase/topics/63002-fusion-technical-support" title="View all articles in Fusion technical support">Fusion technical support</a>&nbsp;<span class="uvStyle-count">40<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-51550">
+                    <a href="http://support.seeedstudio.com/knowledgebase/topics/51550-general" title="View all articles in General">General</a>&nbsp;<span class="uvStyle-count">2<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-56167">
+                    <a href="http://support.seeedstudio.com/knowledgebase/topics/56167-ordering" title="View all articles in Ordering">Ordering</a>&nbsp;<span class="uvStyle-count">8<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-68006">
+                    <a href="http://support.seeedstudio.com/knowledgebase/topics/68006-products-faq" title="View all articles in Products&#39; FAQ">Products' FAQ</a>&nbsp;<span class="uvStyle-count">81<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-56172">
+                    <a href="http://support.seeedstudio.com/knowledgebase/topics/56172-shipping" title="View all articles in Shipping">Shipping</a>&nbsp;<span class="uvStyle-count">9<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+                  <li class="uvListItem uvListItem-topic uvListItem-topic-56987">
+                    <a href="http://support.seeedstudio.com/knowledgebase/topics/56987-tech-support" title="View all articles in Tech Support">Tech Support</a>&nbsp;<span class="uvStyle-count">4<span class="uvStyle-count-label"> articles</span></span>
+                  </li>
+              <li class="uvListItem uvListItem-topic uvListItem-topic-all ">
+                <a href="http://support.seeedstudio.com/knowledgebase/articles/all">All articles</a>
+              </li>
+            </ul>
+        </li>
+
+      <li class="uvNavListItem uvNavListItem-home">
+        <h2 class="uvNavListItemTitle">
+          <a class="uvLink-home" href="http://www.seeedstudio.com/">seeedstudio</a>
+        </h2>
+      </li>
+
+    </ul>
+  </section>
+
+</div>
+
+      
+    </div>
+    
+  </div>
+</div>
+
+
+      <footer class="uvContainer uvFooter">
+  <div class="uvRow">
+    <div class="uvCol-12">
+      <p>
+        
+          <a href="http://www.seeedstudio.com/">seeedstudio</a>
+          <span class="uvStyle-separator"> · </span>
+        
+        <a href="http://support.seeedstudio.com/" class="site-frontpage-link">Feedback &amp; Ideas for seeed</a>
+        <span class="uvStyle-separator"> · </span>
+        <a href="http://support.seeedstudio.com/tos">Terms of Service &amp; Privacy Policy</a>
+      </p>
+      
+        <p>
+          <a href="http://www.uservoice.com/powered-by/?uv_company_name=seeedstudio&amp;uv_experience=portal&amp;uv_contact_url=support.seeedstudio.com&amp;utm_campaign=footer_poweredby&amp;utm_medium=product&amp;utm_source=support.seeedstudio.com">
+            Powered By UserVoice
+          </a>
+          <span class="uvStyle-separator"> · </span>
+          <a href="https://www.uservoice.com/powered-by/?uv_company_name=seeedstudio&amp;uv_experience=portal&amp;uv_contact_url=support.seeedstudio.com&amp;utm_campaign=footer_feedback&amp;utm_medium=product&amp;utm_source=support.seeedstudio.com">
+            Product Management Platform
+          </a>
+        </p>
+      
+      <p>
+        
+      </p>
+    </div>
+  </div>
+</footer>
+
+  </div>
+
+  <script id="uv-user-panel" type="text/x-jquery-tmpl">
+    <section class="uvModuleSection uvModuleSection-userbox uvModuleSection-signout">
+      <div class="vcard">
+        <a class="url" href="${user.uservoice_url}">
+          <span class="uvUserBadge">
+            <img alt="" class="uvUserBadgePhoto photo" src="${user.avatar_url}" width="40">
+          </span>
+          <span class="fn">${user.name}</span>
+        </a>
+        {{if (!user.remembered) }}
+        <span class="uvRememberMe">(<a title="Click this link to stay signed in on this computer even after your browser is closed." href="/remember_me">Stay signed in</a>)</span>
+        {{/if}}
+      </div>
+      <div class="uvUserNav">
+        <a class="url" href="${user.uservoice_url}">Settings</a>
+        {{if user.roles.admin}}
+          <span class="uvStyle-separator">&middot;</span>
+          <a href="http://support.seeedstudio.com/admin">Admin Console</a>
+        {{/if}}
+        <span class="uvStyle-separator">&middot;</span>
+        <a href="/logout">Sign out</a>
+      </div>
+    </section>
+  </script>
+
+
+  <script type="text/javascript">
+    var current_forum_id = null;
+  </script>
+
+  <script id="portalForumsTmpl" type="text/x-jquery-tmpl">
+    <li class="uvListItem{{if current_forum_id==id}} uvListItem-selected{{/if}} uvListItem-forum-${id}">
+      <h4 class="uvListItemHeader">
+        <a href="${url}">${name}</a>
+        {{if is_private}}
+         <span class="uvIcon-private-16">(private)</span>
+        {{/if}}
+      </h4>
+      <div class="uvListItemFooter">${idea_count} <span class="uvStyle-count-label">ideas</span></div>
+    </li>
+  </script>
+
+  <script id="portalAltForumsTmpl" type="text/x-jquery-tmpl">
+    <li class="uvListItem{{if current_forum_id==id}} uvListItem-selected{{/if}} uvListItem-forum-${id}">
+      <h4 class="uvListItemHeader">
+        <a href="${url}">${name}</a>
+        {{if is_private}}
+         <span class="uvIcon-private-10">(private)</span>
+        {{/if}}
+      </h4>
+      <p class="uvStyle-meta">
+        ${idea_count}
+        ideas
+      </p>
+    </li>
+  </script>
+
+  <script id="sidebarForumsTmpl" type="text/x-jquery-tmpl">
+    <li class="uvListItem uvListItem-forum{{if current_forum_id==id}} uvListItem-selected{{/if}} uvListItem-forum-${id}">
+      <a href="${url}" title="View all ideas in ${name}">${name}</a>
+      {{if is_private}}
+        <span class="uvIcon-private-10">(private)</span>
+      {{/if}}
+      &nbsp;<span class="uvStyle-count">${idea_count} <span class="uvStyle-count-label">ideas</span></span>
+    </li>
+  </script>
+
+  <script src="./What is Gerber file_ – Feedback &amp; Ideas for seeed_files/site2-c07d1642f41bcc3590fbcaecd5c93d88.js.Без названия"></script>
+  <script type="text/javascript">
+  (function($) { $.uvMessages = {"cookies-disabled":"Uh-oh! Cookies are disabled. Access the feedback forum directly at \u003ca target=\"_blank\" style=\"color: #fff; text-decoration: underline;\" href=\"http://support.seeedstudio.com/\"\u003ehttp://support.seeedstudio.com/\u003c/a\u003e or enable cookies in your browser settings and refresh this page.","communication-error":"Server communication problems! Please try again.","submit-error":"Sorry, we couldn't submit your request.","voting-submit-error":"We couldn't submit your vote at this time.","out-of-votes-error":"Sorry, we couldn't submit your idea since you're out of votes.","required-fields-error":"Whoops! Please fill in all required fields before continuing.","email-invalid-error":"Invalid email address!","password-invalid-error":"Invalid password!","terms-invalid-error":"You must accept the terms to continue.","large-file-error":"Whoops! You are attempting to upload a file that is too big. Please attach a smaller file and try again.","try-again-error":"Error! Try again.","saving":"Saving","saved":"Saved","nonmatching-passwords":"Passwords must match","password-updated":"Your password has been updated","sent":"Sent!","delete-comment":"Are you sure you want to delete your comment?","delete-suggestion":"Are you sure you want to delete your idea?","dissociate-suggestion":"Since other people support this idea, you cannot delete it. However, you can remove yourself from this idea and it will be associated with 'Anonymous'\n\nAre you sure you want to remove yourself from this idea?"}; })(jQuery || UV.jQuery);
+</script>
+
+
+
+  <script type="text/javascript">
+    var currentUser = null;
+    var currentUserVersion = parseInt("0", 10);
+
+    var currentClient = {
+      client_key: "W0lQnrG0CtFARBjOjyGiw",
+      client_secret: "SabjuJq376jkSXr5gtPsnzTZndb1o256gIiUCBSng",
+      subdomain_key: "seeed"
+    };
+  </script>
+
+  <script type="text/javascript">
+  window.fbAsyncInit = function() {
+    (function($) {
+    })(jQuery || UV.jQuery);
+  };
+</script>
+<script type="text/javascript">
+  (function() {
+    var e = document.createElement('script');
+    e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js#xfbml=1&appId='+46468144668;
+    e.async = true;
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
+
+
+
+    <script type="text/javascript">
+      window.UserVoice || (window.UserVoice = []);
+
+        UserVoice.push(['addTrigger', '#contactus-touchpoint', {"contact_us":true,"mode":"contact","menu":true,"forum_id":243707,"accent_color":"878787","smartvote_enabled":true,"post_idea_enabled":true,"position":"left"}]);
+
+      UserVoice.push(['set', 'locale', 'en']);
+
+      (function() {
+        var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+        uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') +  'widget.uservoice.com/nORfI8dR8KHiLECiDYNUWQ.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+      })();
+    </script>
+
+  <!-- start Mixpanel --><script type="text/javascript">var mpq=[];mpq.push(["init","21070e89b14d1c143a1f3155e0c00b01"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c< d.length;c++){mpq[d[c]]=e(d[c])}})();
+</script><!-- end Mixpanel -->
+
+<script type="text/javascript">
+  // each subdomain to have a separate set of super properties
+  mpq.set_config({ cross_subdomain_cookie: false });
+
+  // Default to anonymous if user not logged in
+  mpq.register({
+    'Anonymous': true
+  });
+
+    mpq.register({
+      'Subdomain':   'seeed',
+      'Product':     'UserVoice'
+    });
+</script>
+  <script type="text/javascript">
+    
+  </script>
+  <div class="uvPasswordReset-overlay" style="display: none">
+  <div class="uvPasswordReset-dialog ">
+    <div class="uvPasswordReset-dialog-header">
+      <button class="uvPasswordReset-dialog-close-button close-button" onclick="event.preventDefault(); UV.jQuery(&#39;.uvPasswordReset-overlay&#39;).hide();"></button>
+      <h1>Your password has been reset</h1>
+    </div>
+    <div class="uvPasswordReset-dialog-content typeset">
+      <p>
+      Due to a <a target="_blank" href="https://community.uservoice.com/blog/uservoice-security-incident-notification/">security incident</a> we have reset your password.
+      </p>
+      <p>
+      We've just sent you an email to <span class="uvPasswordReset-email"></span>.
+      Click the link to create a password, then come back here and sign in.
+      </p>
+      <div class="uvPasswordReset-dialog-buttons">
+        <button class="uvStyle-button" onclick="event.preventDefault(); UV.jQuery(&#39;.uvPasswordReset-overlay&#39;).hide();">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div id="tiptip_holder" style="max-width:300px;"><div id="tiptip_arrow"><div id="tiptip_arrow_inner"></div></div><div id="tiptip_content"></div></div></body></html>
